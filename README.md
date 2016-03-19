@@ -22,9 +22,6 @@ https://drive.google.com/file/d/0B5y6Z-AUEDUYMnVMV3VIcEgxOHI1RkQ5U0M0ekR3ak5rN1o
 
 
 #### manualne polaczenie z baza
-    SSH Hostname: 127.0.0.1:2222
-    SSH Username: vagrant
-    SSH Key File: /.vagrant/default/virtualbox/private_key
-    MySQL Hostname: 127.0.0.1
-    MySQL Server Port: 3306 
+    MySQL Hostname: 33.33.33.10
+    MySQL Server Port: 3306
     MySQL User: root

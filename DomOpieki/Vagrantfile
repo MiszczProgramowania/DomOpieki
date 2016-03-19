@@ -11,6 +11,13 @@ apt-get install -y python-software-properties
 add-apt-repository ppa:ondrej/php5
 apt-get update
 apt-get install -y apache2 git curl php5-cli php5 php5-intl libapache2-mod-php5
+debconf-set-selections <<< 'mysql-server mysql-server/root_password password root'
+debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password root'
+apt-get update
+apt-get -y install mysql-server
+sed -i "s/^bind-address/#bind-address/" /etc/mysql/my.cnf
+mysql -u root -proot -e "GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'root' WITH GRANT OPTION; FLUSH PRIVILEGES;"
+/etc/init.d/mysql restart
 echo "
 <VirtualHost *:80>
     ServerName skeleton-zf.local
@@ -39,10 +46,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.hostname = "skeleton-zf.local"
   config.vm.synced_folder '.', '/var/www/zf'
   config.vm.provision 'shell', inline: @script
+  config.vm.network "private_network", ip: "33.33.33.10"
 
   config.vm.provider "virtualbox" do |vb|
     vb.customize ["modifyvm", :id, "--memory", "1024"]
-    vb.gui = true
+    vb.gui = false
   end
 
 end

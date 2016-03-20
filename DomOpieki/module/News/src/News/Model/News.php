@@ -28,8 +28,11 @@ class News implements InputFilterAwareInterface
         $this->title  = (!empty($data['title'])) ? $data['title'] : null;
         $this->description = (!empty($data['description'])) ? $data['description'] : null;
     }
+    public function getArrayCopy()
+    {
+        return get_object_vars($this);
+    }
 
-    // Add content to these methods:
     public function setInputFilter(InputFilterInterface $inputFilter)
     {
         throw new \Exception("Not used");
@@ -51,20 +54,20 @@ class News implements InputFilterAwareInterface
             $inputFilter->add(array(
                 'name'     => 'description',
                 'required' => false,
-                /*'filters'  => array(
+                'filters'  => array(
                     array('name' => 'StripTags'),
                     array('name' => 'StringTrim'),
-                ),*/
+                ),
             ));
 
             $inputFilter->add(array(
                 'name'     => 'title',
                 'required' => false,
-                /*'filters'  => array(
+                'filters'  => array(
                     array('name' => 'StripTags'),
                     array('name' => 'StringTrim'),
-                ),*/
-                /*'validators' => array(
+                ),
+                'validators' => array(
                     array(
                         'name'    => 'StringLength',
                         'options' => array(
@@ -73,7 +76,7 @@ class News implements InputFilterAwareInterface
                             'max'      => 100,
                         ),
                     ),
-                ),*/
+                ),
             ));
 
             $this->inputFilter = $inputFilter;

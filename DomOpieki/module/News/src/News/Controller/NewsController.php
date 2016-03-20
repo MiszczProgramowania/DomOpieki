@@ -33,7 +33,7 @@ class NewsController extends AbstractActionController
             if ($form->isValid()) {
                 $news->exchangeArray($form->getData());
                 $this->getNewsTable()->saveNews($news);
-                // Redirect to list of albums
+                // Redirect to list of news
                 return $this->redirect()->toRoute('news');
             }
         }
@@ -43,6 +43,45 @@ class NewsController extends AbstractActionController
 
     public function editAction()
     {
+        $id = (int) $this->params()->fromRoute('id', 0);
+        if (!$id) {
+            return $this->redirect()->toRoute('news', array(
+                'action' => 'add'
+            ));
+        }
+
+        // Get the News with the specified id.  An exception is thrown
+        // if it cannot be found, in which case go to the index page.
+        try {
+            $news = $this->getNewsTable()->getNews($id);
+        }
+        catch (\Exception $ex) {
+            return $this->redirect()->toRoute('news', array(
+                'action' => 'index'
+            ));
+        }
+
+        $form  = new NewsForm();
+        $form->bind($news);
+        $form->get('submit')->setAttribute('value', 'Edit');
+
+        $request = $this->getRequest();
+        if ($request->isPost()) {
+            $form->setInputFilter($news->getInputFilter());
+            $form->setData($request->getPost());
+
+            if ($form->isValid()) {
+                $this->getNewsTable()->saveNews($news);
+
+                // Redirect to list of news
+                return $this->redirect()->toRoute('news');
+            }
+        }
+
+        return array(
+            'id' => $id,
+            'form' => $form,
+        );
     }
 
     public function deleteAction()

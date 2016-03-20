@@ -8,8 +8,13 @@ use Zend\View\Model\ViewModel;
 
 class NewsController extends AbstractActionController
 {
+    protected $newsTable;
+
     public function indexAction()
     {
+        return new ViewModel(array(
+            'news' => $this->getNewsTable()->fetchAll(),
+        ));
     }
 
     public function addAction()
@@ -22,5 +27,13 @@ class NewsController extends AbstractActionController
 
     public function deleteAction()
     {
+    }
+    public function getNewsTable()
+    {
+        if (!$this->newsTable) {
+            $sm = $this->getServiceLocator();
+            $this->newsTable = $sm->get('News\Model\NewsTable');
+        }
+        return $this->newsTable;
     }
 }

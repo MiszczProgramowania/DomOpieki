@@ -86,6 +86,28 @@ class NewsController extends AbstractActionController
 
     public function deleteAction()
     {
+        $id = (int) $this->params()->fromRoute('id', 0);
+        if (!$id) {
+            return $this->redirect()->toRoute('news');
+        }
+
+        $request = $this->getRequest();
+        if ($request->isPost()) {
+            $del = $request->getPost('del', 'Nie');
+
+            if ($del == 'Tak') {
+                $id = (int) $request->getPost('id');
+                $this->getNewsTable()->deleteNews($id);
+            }
+
+            // Redirect to list of newss
+            return $this->redirect()->toRoute('news');
+        }
+
+        return array(
+            'id'    => $id,
+            'news' => $this->getNewsTable()->getNews($id)
+        );
     }
     public function getNewsTable()
     {

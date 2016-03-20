@@ -1,10 +1,15 @@
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <title>ADD</title>
-</head>
-<body>
+<?php
+$title = 'Dodaj nowy news';
+$this->headTitle($title);
+?>
+<h1><?php echo $this->escapeHtml($title); ?></h1>
+<?php
+$form->setAttribute('action', $this->url('news', array('action' => 'add')));
+$form->prepare();
 
-</body>
-</html>
+echo $this->form()->openTag($form);
+echo $this->formHidden($form->get('id'));
+echo $this->formRow($form->get('title'));
+echo $this->formRow($form->get('description'));
+echo $this->formSubmit($form->get('submit'));
+echo $this->form()->closeTag();

@@ -5,6 +5,8 @@ namespace News\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
+use News\Model\News;          // <-- Add this import
+use News\Form\NewsForm;
 
 class NewsController extends AbstractActionController
 {
@@ -19,6 +21,24 @@ class NewsController extends AbstractActionController
 
     public function addAction()
     {
+        $form = new NewsForm();
+        $form->get('submit')->setValue('Add');
+
+        $request = $this->getRequest();
+        if ($request->isPost()) {
+            $news = new News();
+            $form->setInputFilter($news->getInputFilter());
+            $form->setData($request->getPost());
+
+            if ($form->isValid()) {
+                $news->exchangeArray($form->getData());
+                $this->getNewsTable()->saveNews($news);
+                // Redirect to list of albums
+                return $this->redirect()->toRoute('news');
+            }
+        }
+        return array('form' => $form);
+
     }
 
     public function editAction()

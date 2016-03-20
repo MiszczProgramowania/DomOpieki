@@ -8,12 +8,19 @@
 
 namespace News\Model;
 
+//filtrowanie forma
+use Zend\InputFilter\InputFilter;
+use Zend\InputFilter\InputFilterAwareInterface;
+use Zend\InputFilter\InputFilterInterface;
 
-class News
+
+class News implements InputFilterAwareInterface
 {
     public $id;
     public $title;
     public $description;
+
+    protected $inputFilter;
 
     public function exchangeArray($data)
     {
@@ -21,4 +28,58 @@ class News
         $this->title  = (!empty($data['title'])) ? $data['title'] : null;
         $this->description = (!empty($data['description'])) ? $data['description'] : null;
     }
+
+    // Add content to these methods:
+    public function setInputFilter(InputFilterInterface $inputFilter)
+    {
+        throw new \Exception("Not used");
+    }
+
+    public function getInputFilter()
+    {
+        if (!$this->inputFilter) {
+            $inputFilter = new InputFilter();
+
+            $inputFilter->add(array(
+                'name'     => 'id',
+                'required' => false,
+                'filters'  => array(
+                    array('name' => 'Int'),
+                ),
+            ));
+
+            $inputFilter->add(array(
+                'name'     => 'description',
+                'required' => false,
+                /*'filters'  => array(
+                    array('name' => 'StripTags'),
+                    array('name' => 'StringTrim'),
+                ),*/
+            ));
+
+            $inputFilter->add(array(
+                'name'     => 'title',
+                'required' => false,
+                /*'filters'  => array(
+                    array('name' => 'StripTags'),
+                    array('name' => 'StringTrim'),
+                ),*/
+                /*'validators' => array(
+                    array(
+                        'name'    => 'StringLength',
+                        'options' => array(
+                            //'encoding' => 'UTF-8',
+                            'min'      => 1,
+                            'max'      => 100,
+                        ),
+                    ),
+                ),*/
+            ));
+
+            $this->inputFilter = $inputFilter;
+        }
+
+        return $this->inputFilter;
+    }
+
 }

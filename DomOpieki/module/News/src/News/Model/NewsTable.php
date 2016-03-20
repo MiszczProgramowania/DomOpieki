@@ -30,7 +30,7 @@ class NewsTable
         $rowset = $this->tableGateway->select(array('id' => $id));
         $row = $rowset->current();
         if (!$row) {
-            throw new \Exception("Could not find row $id");
+            throw new \Exception("Nie znaleziono wiersza o $id");
         }
         return $row;
     }
@@ -49,7 +49,7 @@ class NewsTable
             if ($this->getNews($id)) {
                 $this->tableGateway->update($data, array('id' => $id));
             } else {
-                throw new \Exception('News id does not exist');
+                throw new \Exception('Id Newsa nie istnieje!');
             }
         }
     }

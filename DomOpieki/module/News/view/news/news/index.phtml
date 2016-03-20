@@ -1,10 +1,10 @@
 <?php
-    $title = 'My news';
+    $title = $this->translate('News');
     $this->headTitle($title);
 ?>
 <h1><?php echo $this->escapeHtml($title); ?></h1>
 <p>
-    <a href="<?php echo $this->url('news', array('action'=>'add'));?>">Add new news</a>
+    <a href="<?php echo $this->url('news', array('action'=>'add'));?>">Dodaj newsa</a>
 </p>
 
 <table class="table">

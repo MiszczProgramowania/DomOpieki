@@ -12,7 +12,7 @@ https://drive.google.com/file/d/0B5y6Z-AUEDUYMnVMV3VIcEgxOHI1RkQ5U0M0ekR3ak5rN1o
 
 4.Formularz kontaktowy
 
-5.CAPTCHa // cos zamiast tego
+5.CAPTCHa // przy kontakcie
 
 6.System komentarzy // cos zamiast tego
 

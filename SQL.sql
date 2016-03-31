@@ -13,12 +13,17 @@ INSERT INTO news (title,description)
 VALUES ('Testowy news2','Opis testowego newsa 2Opis testowego newsa 2Opis testowego newsa 2Opis testowego newsa 2');
 COMMIT
 
-CREATE TABLE users (
-  id int(11) NOT NULL auto_increment,
-  user_name varchar(100) NOT NULL,
-  pass_word varchar(100) NOT NULL,
-  PRIMARY KEY (id)
-);
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE user (
+id int(5) unsigned NOT NULL AUTO_INCREMENT,
+username varchar(32) NOT NULL,
+password varchar(32) NOT NULL,
+twitter varchar(32) DEFAULT NULL,
+PRIMARY KEY (id),
+KEY user_twitter (twitter)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
-INSERT INTO [user] (username, password)
-VALUES  ('samsonasik',  'e10adc3949ba59abbe56e057f20f883e');
+--
+-- Dumping data for table `user`
+--
+INSERT INTO `user` VALUES (1,'dollyaswin','$2a$04$W5tyQ2d9aor8bOqT8YNKKeEiOZ0.Jyu7f3LJh0FYgprNTciQfgaZC','dollyaswin');

@@ -20,5 +20,5 @@ CREATE TABLE users (
   PRIMARY KEY (id)
 );
 
-INSERT INTO users (user_name, pass_word)
+INSERT INTO [user] (username, password)
 VALUES  ('samsonasik',  'e10adc3949ba59abbe56e057f20f883e');

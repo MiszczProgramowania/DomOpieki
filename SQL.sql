@@ -26,4 +26,4 @@ KEY user_twitter (twitter)
 --
 -- Dumping data for table `user`
 --
-INSERT INTO `user` VALUES (1,'dollyaswin','$2a$04$W5tyQ2d9aor8bOqT8YNKKeEiOZ0.Jyu7f3LJh0FYgprNTciQfgaZC','dollyaswin');
+INSERT INTO `user` VALUES (1,'test123456','47ec2dd791e31e2ef2076caf64ed9b3d','dollyaswin');

@@ -45,17 +45,6 @@ class UserTable
         return $row;
     }
     
-    public function getUserByTwitter($twitter)
-    {
-        $rowset = $this->tableGateway->select(array('twitter' => $twitter));
-        $row = $rowset->current();
-        if (!$row) {
-            throw new \Exception("Could not find twitter account " . $twitter);
-        }
-        
-        return $row;
-    }
-    
 	public function saveUser(User $user)
     {
         $data = array(

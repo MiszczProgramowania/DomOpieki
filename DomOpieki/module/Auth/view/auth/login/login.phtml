@@ -25,10 +25,6 @@ $form->get('submit')->setAttribute('class', 'button');
 	<?php echo $this->formElement($form->get('csrf')) ?>
     <?php echo $this->formSubmit($form->get('submit')); ?>
 </div>
-<div class="textbox-div">
-    <a class="tw-sign-in-button" href="/login/twitter"></a>
-    <a class="fb-sign-in-button" href="/login/facebook"></a>
-</div>
 <?php echo $this->form()->closeTag(); ?>
 <br />
 <?php if (isset($loginMsg[0])): ?>

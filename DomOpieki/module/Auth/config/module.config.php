@@ -9,7 +9,7 @@ return array(
             'main'  => array(
 				'type'    => 'Literal',
 				'options' => array(
-					'route'    => '/main',
+					'route'    => '/admin',
 					'defaults' => array(
 						'__NAMESPACE__' => 'Auth\Controller',
 						'controller'    => 'Index',
@@ -39,6 +39,7 @@ return array(
                         'controller'    => 'Login',
                         'action'        => 'login',
                     ),
+					
                 ),
                 'may_terminate' => true,
 				'child_routes' => array(

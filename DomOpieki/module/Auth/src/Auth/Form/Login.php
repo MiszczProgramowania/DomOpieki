@@ -12,20 +12,20 @@ class Login extends Form
     {
         parent::__construct('login');
         $this->setAttribute('method', 'post');
-        
+
        	$username = new Element\Text('username');
-       	$username->setLabel('Username')
+       	$username->setLabel('Nazwa Użytownika')
        	         ->setAttribute('size', '32');
        	$this->add($username);
-       	         
+
         $password = new Element\Password('password');
-        $password->setLabel('Password')
+        $password->setLabel('Hasło')
         		 ->setAttribute('size', '10');
        	$this->add($password);
-		
+
        	$csrf = new Element\Csrf('csrf');
        	$this->add($csrf);
-       	
+
        	$submit = new Element\Submit('submit');
        	$submit->setValue('Log In');
        	$this->add($submit);

@@ -15,10 +15,6 @@ return array(
     'navigation' => array(
         'default' => array(
             array(
-                'label' => 'Strona Glówna',
-                'route' => 'home',
-            ),
-            array(
                 'label' => 'Aktualności',
                 'route' => 'news',
             ),

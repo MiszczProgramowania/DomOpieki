@@ -57,6 +57,7 @@ class Module
                     $resultSetPrototype->setArrayObjectPrototype(new Subsites());
                     return new TableGateway('subsites', $dbAdapter, null, $resultSetPrototype);
                 },
+                'Navigation' => 'Application\Navigation\ApplicationNavigationFactory'
             ),
         );
     }

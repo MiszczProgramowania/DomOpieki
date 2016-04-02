@@ -12,20 +12,6 @@
  */
 
 return array(
-    'navigation' => array(
-        'default' => array(
-            array(
-                'label' => 'Aktualności',
-                'route' => 'news',
-            ),
-            array(
-                'label' => 'Podstrony',
-                'route' => 'subsites',
-            ),
-        ),
-    ),
-
-
     'db' => array(
         'driver'         => 'Pdo',
         'dsn'            => 'mysql:dbname=DOM_OPIEKI;host=localhost',
@@ -34,8 +20,6 @@ return array(
     'service_manager' => array(
         'factories' => array(
             'Zend\Db\Adapter\Adapter' => 'Zend\Db\Adapter\AdapterServiceFactory',
-            'navigation' => 'Zend\Navigation\Service\DefaultNavigationFactory',
-
         ),
     ),
 );

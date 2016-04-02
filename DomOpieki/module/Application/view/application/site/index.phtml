@@ -1,0 +1,16 @@
+<?php
+$title = $this->translate('Subsites');
+$this->headTitle($title);
+?>
+<div class="row">
+<h1><?php echo $this->escapeHtml($title); ?></h1>
+
+
+    <?php foreach ($subsites as $singleSubsites) : ?>
+    <div class="col-md-6">
+            <h2><?php echo $this->escapeHtml($singleSubsites->title);?></h2>
+            <p><?php echo $this->escapeHtml($singleSubsites->description);?></p>
+    </div>
+    <?php endforeach; ?>
+
+</div>

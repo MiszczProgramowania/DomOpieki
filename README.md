@@ -4,22 +4,25 @@
 #### Informacje dodatkowe
 https://drive.google.com/file/d/0B5y6Z-AUEDUYMnVMV3VIcEgxOHI1RkQ5U0M0ekR3ak5rN1o0/view
 
-1.Opartego na CSS/DIV
+1. Zapisywanie newsow do bazy danych // <>DONE<>
 
-2.Zapisywanie newsow do bazy danych // <>DONE<>
+2. Panel administratora // <>HALF-DONE<>
 
-3.Panel administratora // <>HALF-DONE<>
+3. Formularz kontaktowy
 
-4.Formularz kontaktowy
+4. CAPTCHa // przy kontakcie
 
-5.CAPTCHa // przy kontakcie
+5. System komentarzy // exchanged to // System nowych podstron // <>DONE<>
 
-6.System komentarzy // exchanged to // System nowych podstron // <>DONE<>
+6. Ergonomia użytkownika
 
-7.System tagów / kategorii // cos zamiast tego
+AditionalTasks:
 
-8.Ergonomia użytkownika
+1.Strony powinny miec w url zakodowana nazwe a nie id
 
+2.Admin panel powinien miec dodatkowe menu z linkami do swoich funkcjonalnosci
+
+3.Potrzebny by byl file uploader w adminie polaczony z newsami i podstronami
 
 #### manualne polaczenie z baza
     MySQL Hostname: 33.33.33.10

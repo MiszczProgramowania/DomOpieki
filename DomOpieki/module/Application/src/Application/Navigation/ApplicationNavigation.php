@@ -17,16 +17,14 @@ class ApplicationNavigation extends DefaultNavigationFactory
         $navigation = array();
 
         if (null === $this->pages) {
-            // ref to one of your tables
-            // in this case, getPages will simply fetch all pages
             $pages = $serviceLocator->get('Application\Model\SubsitesTable')->fetchAll();
 
             if ($pages) { // ResultSet
-                foreach ($pages as $key => $page) { // loopz0r
+                foreach ($pages as $key => $page) {
                     $navigation[] = array(
                         'label' => $page->title,
                         'uri'   => $page->id
-                    ); // props
+                    );
                 }
             }
 

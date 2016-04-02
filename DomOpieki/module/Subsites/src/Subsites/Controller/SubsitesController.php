@@ -46,7 +46,7 @@ class SubsitesController extends AbstractActionController
                 $subsites->exchangeArray($form->getData());
                 $this->getSubsitesTable()->saveSubsites($subsites);
                 // Redirect to list of subsites
-                return $this->redirect()->toRoute('subsites');
+                return $this->redirect()->toRoute('adminSubsites');
             }
         }
         return array('form' => $form);
@@ -57,7 +57,7 @@ class SubsitesController extends AbstractActionController
     {
         $id = (int) $this->params()->fromRoute('id', 0);
         if (!$id) {
-            return $this->redirect()->toRoute('subsites', array(
+            return $this->redirect()->toRoute('adminSubsites', array(
                 'action' => 'add'
             ));
         }
@@ -68,7 +68,7 @@ class SubsitesController extends AbstractActionController
             $subsites = $this->getSubsitesTable()->getSubsites($id);
         }
         catch (\Exception $ex) {
-            return $this->redirect()->toRoute('subsites', array(
+            return $this->redirect()->toRoute('adminSubsites', array(
                 'action' => 'index'
             ));
         }
@@ -86,7 +86,7 @@ class SubsitesController extends AbstractActionController
                 $this->getSubsitesTable()->saveSubsites($subsites);
 
                 // Redirect to list of subsites
-                return $this->redirect()->toRoute('subsites');
+                return $this->redirect()->toRoute('adminSubsites');
             }
         }
 
@@ -100,7 +100,7 @@ class SubsitesController extends AbstractActionController
     {
         $id = (int) $this->params()->fromRoute('id', 0);
         if (!$id) {
-            return $this->redirect()->toRoute('subsites');
+            return $this->redirect()->toRoute('adminSubsites');
         }
 
         $request = $this->getRequest();

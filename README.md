@@ -6,17 +6,17 @@ https://drive.google.com/file/d/0B5y6Z-AUEDUYMnVMV3VIcEgxOHI1RkQ5U0M0ekR3ak5rN1o
 
 1.Opartego na CSS/DIV
 
-2.Zapisywanie newsow do bazy danych
+2.Zapisywanie newsow do bazy danych // <>DONE<>
 
-3.Panel administratora
+3.Panel administratora // <>HALF-DONE<>
 
 4.Formularz kontaktowy
 
 5.CAPTCHa // przy kontakcie
 
-6.System komentarzy // cos zamiast tego
+6.System komentarzy // exchanged to // System nowych podstron // <>DONE<>
 
-7.System tagów / kategorii
+7.System tagów / kategorii // cos zamiast tego
 
 8.Ergonomia użytkownika
 

@@ -19,18 +19,16 @@ return array(
                 'route' => 'home',
             ),
             array(
-                'label' => 'Page #1',
-                'route' => 'page-1',
-                'pages' => array(
-                    array(
-                        'label' => 'Child #1',
-                        'route' => 'page-1-child',
-                    ),
-                ),
+                'label' => 'Aktualności',
+                'route' => 'news',
             ),
             array(
-                'label' => 'Page #2',
-                'route' => 'page-2',
+                'label' => 'Podstrony',
+                'route' => 'subsites',
+            ),
+            array(
+                'label' => 'admin',
+                'route' => 'adminSubsites',
             ),
         ),
     ),
@@ -43,8 +41,7 @@ return array(
     ),
     'service_manager' => array(
         'factories' => array(
-            'Zend\Db\Adapter\Adapter'
-            => 'Zend\Db\Adapter\AdapterServiceFactory',
+            'Zend\Db\Adapter\Adapter' => 'Zend\Db\Adapter\AdapterServiceFactory',
             'navigation' => 'Zend\Navigation\Service\DefaultNavigationFactory',
 
         ),

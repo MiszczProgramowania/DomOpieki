@@ -11,6 +11,7 @@ use Subsites\Form\SubsitesForm;
 class PublicController extends AbstractActionController
 {
     protected $subsitesTable;
+    protected $subsitesSingle;
 
     public function indexAction()
     {
@@ -25,5 +26,13 @@ class PublicController extends AbstractActionController
             $this->subsitesTable = $sm->get('Subsites\Model\SubsitesTable');
         }
         return $this->subsitesTable;
+    }
+    public function singleAction()
+    {
+        $id = (int) $this->params()->fromRoute('id', 0);
+        $this->subsitesSingle = $this->getSubsitesTable()->getSubsites($id);
+        return new ViewModel(array(
+        'subsite' => $this->subsitesSingle,
+    ));
     }
 }

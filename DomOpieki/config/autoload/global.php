@@ -12,6 +12,30 @@
  */
 
 return array(
+    'navigation' => array(
+        'default' => array(
+            array(
+                'label' => 'Strona Glówna',
+                'route' => 'home',
+            ),
+            array(
+                'label' => 'Page #1',
+                'route' => 'page-1',
+                'pages' => array(
+                    array(
+                        'label' => 'Child #1',
+                        'route' => 'page-1-child',
+                    ),
+                ),
+            ),
+            array(
+                'label' => 'Page #2',
+                'route' => 'page-2',
+            ),
+        ),
+    ),
+
+
     'db' => array(
         'driver'         => 'Pdo',
         'dsn'            => 'mysql:dbname=DOM_OPIEKI;host=localhost',
@@ -21,6 +45,8 @@ return array(
         'factories' => array(
             'Zend\Db\Adapter\Adapter'
             => 'Zend\Db\Adapter\AdapterServiceFactory',
+            'navigation' => 'Zend\Navigation\Service\DefaultNavigationFactory',
+
         ),
     ),
 );

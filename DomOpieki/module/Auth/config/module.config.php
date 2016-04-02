@@ -6,7 +6,7 @@ return array(
             // new controllers and actions without needing to create a new
             // module. Simply drop new controllers in, and you can access them
             // using the path /application/:controller/:action
-            'main'  => array(
+            'admin'  => array(
 				'type'    => 'Literal',
 				'options' => array(
 					'route'    => '/admin',
@@ -17,18 +17,6 @@ return array(
 					)
 				),
 				'may_terminate' => true,
-				'child_routes' => array(
-					'default' => array(
-						'type'    => 'Segment',
-						'options' => array(
-							'route'    => '/[:controller[/:action]]',
-							'constraints' => array(
-								'controller' => '[a-zA-Z][a-zA-Z0-9_-]*',
-								'action'     => '[a-zA-Z][a-zA-Z0-9_-]*',
-							)
-						)
-					)
-				)
 			),
             'login' => array(
                 'type'    => 'Literal',

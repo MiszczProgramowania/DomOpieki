@@ -10,7 +10,7 @@ $this->headTitle($title);
     '<?php echo $this->escapeHtml($news->description); ?>'?
 </p>
 <?php
-$url = $this->url('news', array(
+$url = $this->url('adminNews', array(
     'action' => 'delete',
     'id'     => $this->id,
 ));

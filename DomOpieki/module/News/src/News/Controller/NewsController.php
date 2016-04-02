@@ -12,11 +12,23 @@ class NewsController extends AbstractActionController
 {
     protected $newsTable;
 
+    public function checkForAdmin()
+    {
+        $authService = $this->serviceLocator->get('auth_service');
+        if (! $authService->hasIdentity()) {
+            // if not log in, redirect to login page
+            $this->redirect()->toUrl('/login');
+        }
+        return true;
+    }
     public function indexAction()
     {
+        if($this->checkForAdmin())
+        {
         return new ViewModel(array(
             'news' => $this->getNewsTable()->fetchAll(),
         ));
+        }
     }
 
     public function addAction()

@@ -26,10 +26,6 @@ return array(
                 'label' => 'Podstrony',
                 'route' => 'subsites',
             ),
-            array(
-                'label' => 'admin',
-                'route' => 'adminSubsites',
-            ),
         ),
     ),
 

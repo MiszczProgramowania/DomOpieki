@@ -25,9 +25,13 @@ return array(
                 ),
             ),
             'news' => array(
-                'type'    => 'literal',
+                'type'    => 'segment',
                 'options' => array(
-                    'route'    => '/news',
+                    'route'    => '/news[/:action][/:id]',
+                    'constraints' => array(
+                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                        'id'     => '[0-9]+',
+                    ),
                     'defaults' => array(
                         'controller' => 'News\Controller\Public',
                         'action'     => 'index',

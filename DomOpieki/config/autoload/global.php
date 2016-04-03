@@ -17,9 +17,27 @@ return array(
         'dsn'            => 'mysql:dbname=DOM_OPIEKI;host=localhost',
 
     ),
+    'navigation' => array(
+
+        // navigation with name default
+        'admin' => array(
+            array(
+                'label' => 'Podstrony',
+                'route' => 'adminSubsites',
+            ),
+            array(
+                'label' => 'Aktualności',
+                'route' => 'adminNews',
+            ),
+        ),
+    ),
     'service_manager' => array(
+        'abstract_factories' => array(
+            'Zend\Navigation\Service\NavigationAbstractServiceFactory'
+        ),
         'factories' => array(
             'Zend\Db\Adapter\Adapter' => 'Zend\Db\Adapter\AdapterServiceFactory',
         ),
+
     ),
 );

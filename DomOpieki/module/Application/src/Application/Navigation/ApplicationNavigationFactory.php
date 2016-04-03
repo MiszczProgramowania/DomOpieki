@@ -14,7 +14,7 @@ class ApplicationNavigationFactory implements FactoryInterface
 {
     public function createService(ServiceLocatorInterface $serviceLocator)
     {
-        $navigation = new ApplicationNavigation();
+        $navigation = new ApplicationNavigation('Zend\Navigation\Default');
         return $navigation->createService($serviceLocator);
     }
 }

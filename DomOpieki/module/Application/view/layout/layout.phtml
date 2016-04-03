@@ -41,21 +41,34 @@
                 </div><!--/.nav-collapse -->
             </div>
         </nav>
-        <?php
-        if(!strpos($this->url(),'admin')) {
-            echo '<div class="container">' . $this->content . '</div>';
-        }
-        else {
-            echo '<div class="row"><div class="col-md-2">';
-            echo $this->navigation('Zend\Navigation\Admin')->menu()->setPartial('partial/adminmenu.phtml');
-            echo '</div>';
-            echo '<div class="col-md-10"><div class="container">' . $this->content . '</div></div></div>';
-        }
-        ?>
-        <footer>
-            <hr>
+        <?php if (!strpos($this->url(),'admin')) : ?>
             <div class="container">
+                <?php echo $this->content; ?>
+            </div>
+        <?php else : ?>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-2">
+                        <?php echo $this->navigation('Zend\Navigation\Admin')->menu()->setPartial('partial/adminmenu.phtml'); ?>
+                    </div>
+                    <div class="col-md-10">
+                        <?php echo $this->content ?>
+                    </div>
+                </div>
+            </div>
+        <?php endif ?>
+
+
+
+
+
+            <footer>
+
+            <div class="container">
+                <div class="row">
+                <hr>
                 <p>&copy; <?php echo date('Y') ?> by Masnet && IT-GRAFIKA.pl <?php echo $this->translate('All rights reserved.') ?></p>
+                </div>
             </div>
         </footer>
         <?php echo $this->inlineScript() ?>

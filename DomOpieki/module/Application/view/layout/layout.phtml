@@ -41,13 +41,23 @@
                 </div><!--/.nav-collapse -->
             </div>
         </nav>
-        <div class="container">
-            <?php echo $this->content; ?>
+        <?php
+        if(!strpos($this->url(),'admin')) {
+            echo '<div class="container">' . $this->content . '</div>';
+        }
+        else {
+            echo '<div class="row"><div class="col-md-2">';
+            echo $this->navigation('Zend\Navigation\Admin')->menu()->setPartial('partial/adminmenu.phtml');
+            echo '</div>';
+            echo '<div class="col-md-10"><div class="container">' . $this->content . '</div></div></div>';
+        }
+        ?>
+        <footer>
             <hr>
-            <footer>
+            <div class="container">
                 <p>&copy; <?php echo date('Y') ?> by Masnet && IT-GRAFIKA.pl <?php echo $this->translate('All rights reserved.') ?></p>
-            </footer>
-        </div> <!-- /container -->
+            </div>
+        </footer>
         <?php echo $this->inlineScript() ?>
     </body>
 </html>

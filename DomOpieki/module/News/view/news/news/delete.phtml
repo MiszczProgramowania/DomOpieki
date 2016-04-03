@@ -4,7 +4,7 @@ $title = 'Usuń news';
 $this->headTitle($title);
 ?>
 <h1><?php echo $this->escapeHtml($title); ?></h1>
-<?php echo $this->navigation('Zend\Navigation\Admin')->menu(); ?>
+
 <p>Na pewno chcesz usunac?
     '<?php echo $this->escapeHtml($news->title); ?>' o opisie<br/>
     '<?php echo $this->escapeHtml($news->description); ?>'?

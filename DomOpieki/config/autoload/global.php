@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Global Configuration Override
  *
@@ -14,7 +14,7 @@
 return array(
     'db' => array(
         'driver'         => 'Pdo',
-        'dsn'            => 'mysql:dbname=DOM_OPIEKI;host=localhost',
+        'dsn'            => 'mysql:dbname=15094637_ddp;host=localhost',
 
     ),
     'navigation' => array(
@@ -28,10 +28,6 @@ return array(
             array(
                 'label' => 'Aktualności',
                 'route' => 'adminNews',
-            ),
-            array(
-                'label' => 'Media',
-                'route' => 'media',
             ),
         ),
     ),

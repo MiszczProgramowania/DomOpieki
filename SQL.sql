@@ -11,10 +11,11 @@ PRIMARY KEY (id),
 KEY user_twitter (twitter)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
-INSERT INTO `user` VALUES (1,'test123456','47ec2dd791e31e2ef2076caf64ed9b3d','dollyaswin');
+-- wygenerowano za pomoca md5
+INSERT INTO `user` VALUES (1,'administrator','47ec2dd791e31e2ef2076caf64ed9b3d','dollyaswin');
 -- NEWSY
 CREATE TABLE news(
-  id INT NOT NULL auto_increment,
+  id INT NOT NULL AUTO_INCREMENT,
   title VARCHAR(100) NOT NULL,
   description TEXT,
   PRIMARY KEY (id)

@@ -1,0 +1,12 @@
+:Location /*.php
+Use php56
+:Location
+
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^(www\.)?ddp.mikolow\.eu$ [NC]
+RewriteCond %{REQUEST_FILENAME} !/public/
+RewriteRule ^(.*)$ /public/$1 [L]
+
+order deny,allow
+deny from all
+allow from 89.68.3.107 

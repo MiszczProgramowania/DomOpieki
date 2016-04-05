@@ -8,12 +8,14 @@ class IndexController extends AbstractActionController
 {
 	public function indexAction()
 	{
+
 		$authService = $this->serviceLocator->get('auth_service');
+
     	if (! $authService->hasIdentity()) {
     		// if not log in, redirect to login page
-    		return $this->redirect()->toUrl('/login');
+
+			return $this->redirect()->toUrl('');
     	}
-    	
 		return new ViewModel();
 	}	
 }

@@ -1,7 +1,7 @@
 CREATE DATABASE DOM_OPIEKI;
 USE DOM_OPIEKI;
 -- ADMIN
-DROP TABLE IF EXISTS `user`;
+
 CREATE TABLE user (
 id int(5) unsigned NOT NULL AUTO_INCREMENT,
 username varchar(32) NOT NULL,
@@ -12,7 +12,8 @@ KEY user_twitter (twitter)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 -- wygenerowano za pomoca md5
-INSERT INTO `user` VALUES (1,'administrator','47ec2dd791e31e2ef2076caf64ed9b3d','dollyaswin');
+
+INSERT INTO `user` VALUES (1,'administrator','10f5425887f555a329a9071d88c535f6','dollyaswin');
 -- NEWSY
 CREATE TABLE news(
   id INT NOT NULL AUTO_INCREMENT,

@@ -24,7 +24,7 @@ class LoginController extends AbstractActionController
         $authService = $this->serviceLocator->get('auth_service');
         if ($authService->hasIdentity()) {
             // if not log in, redirect to login page
-            return $this->redirect()->toUrl('/admin');
+            return $this->redirect()->toRoute('admin');
         }
 
         $form = new Login;
@@ -52,7 +52,7 @@ class LoginController extends AbstractActionController
                 $userId = $authAdapter->getResultRowObject('id')->id;
                 $authService->getStorage()
                     ->write($userId);
-                return $this->redirect()->toUrl('/admin');
+                return $this->redirect()->toRoute('admin');
             } else {
                 $loginMsg = $result->getMessages();
             }
@@ -69,6 +69,7 @@ class LoginController extends AbstractActionController
         $authService = $this->serviceLocator->get('auth_service');
         if (!$authService->hasIdentity()) {
             // if not log in, redirect to login page
+            echo ('redirect');
             return $this->redirect()->toUrl('/login');
         }
 

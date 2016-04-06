@@ -3604,16 +3604,16 @@
         },
         {
             "name": "zendframework/zend-mvc",
-            "version": "2.7.3",
+            "version": "2.7.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-mvc.git",
-                "reference": "90fbfbccf556b8f0dc1b182c3850ef7d04d23e68"
+                "reference": "5ca5f3e6dc7daea9c46cf4864a6b2f4b3befeec9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-mvc/zipball/90fbfbccf556b8f0dc1b182c3850ef7d04d23e68",
-                "reference": "90fbfbccf556b8f0dc1b182c3850ef7d04d23e68",
+                "url": "https://api.github.com/repos/zendframework/zend-mvc/zipball/5ca5f3e6dc7daea9c46cf4864a6b2f4b3befeec9",
+                "reference": "5ca5f3e6dc7daea9c46cf4864a6b2f4b3befeec9",
                 "shasum": ""
             },
             "require": {
@@ -3690,7 +3690,7 @@
                 "mvc",
                 "zf2"
             ],
-            "time": "2016-03-08 18:55:43"
+            "time": "2016-04-03 16:51:37"
         },
         {
             "name": "zendframework/zend-navigation",

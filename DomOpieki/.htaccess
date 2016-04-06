@@ -9,4 +9,5 @@ RewriteRule ^(.*)$ /public/$1 [L]
 
 order deny,allow
 deny from all
-allow from 89.68.3.107 
+allow from 89.68.3.107
+

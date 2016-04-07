@@ -1,0 +1,15 @@
+<div class="col-md-2">
+<ul class="nav navbar-nav">
+    <?php
+    foreach ($this->container as $page) {
+        echo '<li>';
+        echo $this->navigation()->menu()->htmlify($page) . PHP_EOL;
+        echo '</li>';
+    }
+    ?>
+
+</ul>
+    <button>
+        <a href="/login/logout">Wyloguj</a>
+    </button>
+</div>

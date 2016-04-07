@@ -1,0 +1,24 @@
+<?php
+
+$title = 'Usuń subsites';
+$this->headTitle($title);
+?>
+<h1><?php echo $this->escapeHtml($title); ?></h1>
+
+<p>Na pewno chcesz usunac?
+    '<?php echo $this->escapeHtml($subsites->title); ?>' o opisie<br/>
+    '<?php echo $this->escapeHtml($subsites->description); ?>'?
+</p>
+<?php
+$url = $this->url('adminSubsites', array(
+    'action' => 'delete',
+    'id'     => $this->id,
+));
+?>
+<form action="<?php echo $url; ?>" method="post">
+    <div>
+        <input type="hidden" name="id" value="<?php echo (int) $subsites->id; ?>" />
+        <input type="submit" name="del" value="Tak" />
+        <input type="submit" name="del" value="Nie" />
+    </div>
+</form>

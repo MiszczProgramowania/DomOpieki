@@ -9,8 +9,6 @@
     "homepage": "http://framework.zend.com/",
     "require": {
         "php": ">=5.5",
-        "zendframework/zendframework": "~2.5",
-        "doctrine/doctrine-orm-module": "^0.10.0",
-        "zendframework/zendoauth": ">=2.0.0"
+        "zendframework/zendframework": "~2.5"
     }
 }

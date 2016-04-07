@@ -1,9 +1,9 @@
 <?php echo $this->doctype(); ?>
 
-<html lang="pl">
+<html lang="en">
     <head>
         <meta charset="utf-8">
-        <?php echo $this->headTitle( $this->translate('Dom Opieki'))->setSeparator(' - ')->setAutoEscape(false) ?>
+        <?php echo $this->headTitle('ZF2 '. $this->translate('Skeleton Application'))->setSeparator(' - ')->setAutoEscape(false) ?>
 
         <?php echo $this->headMeta()
             ->appendName('viewport', 'width=device-width, initial-scale=1.0')
@@ -34,38 +34,22 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="<?php echo $this->url('home') ?>"><img style="height:30px" src="<?php echo $this->basePath('img/logo.png') ?>" alt="Dzienny Dom Pomocy"/>&nbsp;<?php echo $this->translate('Skeleton Application') ?></a>
+                    <a class="navbar-brand" href="<?php echo $this->url('home') ?>"><img src="<?php echo $this->basePath('img/zf2-logo.png') ?>" alt="Zend Framework 2"/>&nbsp;<?php echo $this->translate('Skeleton Application') ?></a>
                 </div>
                 <div class="collapse navbar-collapse">
-                    <?php echo $this->navigation('navigation')->menu()->setPartial('partial/mainmenu.phtml'); ?>
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="<?php echo $this->url('home') ?>"><?php echo $this->translate('Home') ?></a></li>
+                    </ul>
                 </div><!--/.nav-collapse -->
             </div>
         </nav>
-        <?php if (!strpos($this->url(),'admin')) : ?>
-            <div class="container">
-                <?php echo $this->content; ?>
-            </div>
-        <?php else : ?>
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-2">
-                        <?php echo $this->navigation('Zend\Navigation\Admin')->menu()->setPartial('partial/adminmenu.phtml'); ?>
-                    </div>
-                    <div class="col-md-10">
-                        <?php echo $this->content ?>
-                    </div>
-                </div>
-            </div>
-        <?php endif ?>
+        <div class="container">
+            <?php echo $this->content; ?>
+            <hr>
             <footer>
-
-            <div class="container">
-                <div class="row">
-                <hr>
-                <p>&copy; <?php echo date('Y') ?> by Masnet && IT-GRAFIKA.pl <?php echo $this->translate('All rights reserved.') ?></p>
-                </div>
-            </div>
-        </footer>
+                <p>&copy; 2005 - <?php echo date('Y') ?> by Zend Technologies Ltd. <?php echo $this->translate('All rights reserved.') ?></p>
+            </footer>
+        </div> <!-- /container -->
         <?php echo $this->inlineScript() ?>
     </body>
 </html>

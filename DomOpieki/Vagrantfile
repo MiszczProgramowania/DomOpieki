@@ -1,4 +1,3 @@
-
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
@@ -7,17 +6,7 @@ VAGRANTFILE_API_VERSION = '2'
 @script = <<SCRIPT
 DOCUMENT_ROOT_ZEND="/var/www/zf/public"
 apt-get update
-apt-get install -y python-software-properties
-add-apt-repository ppa:ondrej/php5
-apt-get update
 apt-get install -y apache2 git curl php5-cli php5 php5-intl libapache2-mod-php5
-apt-get install -y php5-mysql
-debconf-set-selections <<< 'mysql-server mysql-server/root_password password root'
-debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password root'
-apt-get -y install mysql-server
-sed -i "s/^bind-address/#bind-address/" /etc/mysql/my.cnf
-mysql -u root -proot -e "GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'root' WITH GRANT OPTION; FLUSH PRIVILEGES;"
-/etc/init.d/mysql restart
 echo "
 <VirtualHost *:80>
     ServerName skeleton-zf.local
@@ -41,16 +30,14 @@ echo "** [ZEND] Visit http://localhost:8085 in your browser for to view the appl
 SCRIPT
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-  config.vm.box = 'hashicorp/precise32'
+  config.vm.box = 'bento/ubuntu-14.04'
   config.vm.network "forwarded_port", guest: 80, host: 8085
   config.vm.hostname = "skeleton-zf.local"
   config.vm.synced_folder '.', '/var/www/zf'
   config.vm.provision 'shell', inline: @script
-  config.vm.network "private_network", ip: "33.33.33.10"
 
   config.vm.provider "virtualbox" do |vb|
     vb.customize ["modifyvm", :id, "--memory", "1024"]
-    vb.gui = false
   end
 
 end

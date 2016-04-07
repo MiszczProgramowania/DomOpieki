@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
  * Global Configuration Override
  *
@@ -12,32 +12,5 @@
  */
 
 return array(
-    'db' => array(
-        'driver'         => 'Pdo',
-        'dsn'            => 'mysql:dbname=15094637_ddp;host=localhost',
-
-    ),
-    'navigation' => array(
-
-        // navigation with name default
-        'admin' => array(
-            array(
-                'label' => 'Podstrony',
-                'route' => 'adminSubsites',
-            ),
-            array(
-                'label' => 'Aktualności',
-                'route' => 'adminNews',
-            ),
-        ),
-    ),
-    'service_manager' => array(
-        'abstract_factories' => array(
-            'Zend\Navigation\Service\NavigationAbstractServiceFactory'
-        ),
-        'factories' => array(
-            'Zend\Db\Adapter\Adapter' => 'Zend\Db\Adapter\AdapterServiceFactory',
-        ),
-
-    ),
+    // ...
 );

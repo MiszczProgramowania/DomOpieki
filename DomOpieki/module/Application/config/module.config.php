@@ -22,17 +22,33 @@ return array(
                     ),
                 ),
             ),
-            'site' => array(
-                'type'    => 'segment',
+            // The following is a route to simplify getting started creating
+            // new controllers and actions without needing to create a new
+            // module. Simply drop new controllers in, and you can access them
+            // using the path /application/:controller/:action
+            'application' => array(
+                'type'    => 'Literal',
                 'options' => array(
-                    'route'    => '[/:id]',
-                    'constraints' => array(
-                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
-                        'id'     => '[0-9]+',
-                    ),
+                    'route'    => '/application',
                     'defaults' => array(
-                        'controller' => 'Application\Controller\Site',
-                        'action'     => 'single',
+                        '__NAMESPACE__' => 'Application\Controller',
+                        'controller'    => 'Index',
+                        'action'        => 'redirect',
+                    ),
+                ),
+                'may_terminate' => true,
+                'child_routes' => array(
+                    'default' => array(
+                        'type'    => 'Segment',
+                        'options' => array(
+                            'route'    => '/[:controller[/:action]]',
+                            'constraints' => array(
+                                'controller' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'action'     => '[a-zA-Z][a-zA-Z0-9_-]*',
+                            ),
+                            'defaults' => array(
+                            ),
+                        ),
                     ),
                 ),
             ),
@@ -59,8 +75,7 @@ return array(
     ),
     'controllers' => array(
         'invokables' => array(
-            'Application\Controller\Index' => Controller\IndexController::class,
-            'Application\Controller\Site' => 'Application\Controller\SiteController'
+            'Application\Controller\Index' => Controller\IndexController::class
         ),
     ),
     'view_manager' => array(
@@ -77,7 +92,6 @@ return array(
         ),
         'template_path_stack' => array(
             __DIR__ . '/../view',
-            'subsites' => __DIR__ . '/../view',
         ),
     ),
     // Placeholder for console routes

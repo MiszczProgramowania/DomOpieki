@@ -21,23 +21,18 @@ class LoginController extends AbstractActionController
 {
     public function loginAction()
     {
-
         $authService = $this->serviceLocator->get('auth_service');
-
         if ($authService->hasIdentity()) {
             // if not log in, redirect to login page
-            return $this->redirect()->toRoute('admin');
+            return $this->redirect()->toUrl('/admin');
         }
 
         $form = new Login;
         $loginMsg = array();
-
         if ($this->getRequest()->isPost()) {
             $form->setData($this->getRequest()->getPost());
-
             if (!$form->isValid()) {
                 // not valid form
-
                 return new ViewModel(array(
                     'title' => 'Log In',
                     'form' => $form
@@ -46,14 +41,7 @@ class LoginController extends AbstractActionController
 
             $dbAdapter = $this->serviceLocator->get('Zend\Db\Adapter\Adapter');
             $loginData = $form->getData();
-
-            //$authAdapter = new DbTable($dbAdapter, 'user', 'username', 'password');
-            $authAdapter = new AuthAdapter($dbAdapter,
-                'users',
-                'username',
-                'password',
-                'MD5(?) AND active = "TRUE"'
-            );
+            $authAdapter = new DbTable($dbAdapter, 'user', 'username', 'password', 'MD5(?)');
             $authAdapter->setIdentity($loginData['username'])
                 ->setCredential($loginData['password']);
             $authService = $this->serviceLocator->get('auth_service');
@@ -64,7 +52,7 @@ class LoginController extends AbstractActionController
                 $userId = $authAdapter->getResultRowObject('id')->id;
                 $authService->getStorage()
                     ->write($userId);
-                return $this->redirect()->toRoute('admin');
+                return $this->redirect()->toUrl('/admin');
             } else {
                 $loginMsg = $result->getMessages();
             }
@@ -81,7 +69,6 @@ class LoginController extends AbstractActionController
         $authService = $this->serviceLocator->get('auth_service');
         if (!$authService->hasIdentity()) {
             // if not log in, redirect to login page
-            echo ('redirect');
             return $this->redirect()->toUrl('/login');
         }
 

@@ -1,0 +1,11 @@
+<?php
+$title = $this->translate('NewsSingle');
+$this->headTitle($title);
+?>
+<div class="row">
+    <h1><?php echo $this->escapeHtml($title); ?></h1>
+
+            <h2><?php echo $this->escapeHtml($news->title);?></h2>
+            <p><?php echo $this->escapeHtml($news->description);?></p>
+    
+</div>

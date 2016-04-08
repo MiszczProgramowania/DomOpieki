@@ -27,7 +27,6 @@ return array(
                         'controller' => 'Login',
                         'action' => 'login',
                     ),
-
                 ),
                 'may_terminate' => true,
                 'child_routes' => array(
@@ -41,7 +40,6 @@ return array(
                         )
                     )
                 ),
-
             ),
             'media' => array(
                 'type' => 'literal',

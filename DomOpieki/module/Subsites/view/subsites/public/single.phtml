@@ -1,11 +1,9 @@
 <?php
-$title = $this->translate('SubsitesSingle');
+$title = $this->escapeHtml($subsite->title);
 $this->headTitle($title);
 ?>
-<div class="row">
-    <h1><?php echo $this->escapeHtml($title); ?></h1>
 
-            <h2><?php echo $this->escapeHtml($subsite->title);?></h2>
+<div class="row">
+            <h1><?php echo $this->escapeHtml($subsite->title);?></h1>
             <p><?php echo $this->escapeHtml($subsite->description);?></p>
-    
 </div>

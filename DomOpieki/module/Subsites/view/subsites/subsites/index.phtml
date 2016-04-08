@@ -19,9 +19,9 @@
             <td><?php echo $this->escapeHtml($singleSubsites->description);?></td>
             <td>
                 <a href="<?php echo $this->url('adminSubsites',
-                    array('action'=>'edit', 'id' => $singleSubsites->id));?>">Edit</a>
+                    array('action'=>'edit', 'id' => $singleSubsites->id));?>">Edycja</a>
                 <a href="<?php echo $this->url('adminSubsites',
-                    array('action'=>'delete', 'id' => $singleSubsites->id));?>">Delete</a>
+                    array('action'=>'delete', 'id' => $singleSubsites->id));?>">Usuń</a>
             </td>
         </tr>
     <?php endforeach; ?>

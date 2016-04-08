@@ -19,9 +19,9 @@
             <td><?php echo $this->escapeHtml($singleNews->description);?></td>
             <td>
                 <a href="<?php echo $this->url('adminNews',
-                    array('action'=>'edit', 'id' => $singleNews->id));?>">Edit</a>
+                    array('action'=>'edit', 'id' => $singleNews->id));?>">Edycja</a>
                 <a href="<?php echo $this->url('adminNews',
-                    array('action'=>'delete', 'id' => $singleNews->id));?>">Delete</a>
+                    array('action'=>'delete', 'id' => $singleNews->id));?>">Usuń</a>
             </td>
         </tr>
     <?php endforeach; ?>

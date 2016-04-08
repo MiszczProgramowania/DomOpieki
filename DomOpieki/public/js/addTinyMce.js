@@ -8,4 +8,5 @@
         width: '100%',
         height: 400,
         autoresize_min_height: 400,
+        language : 'pl'
     });

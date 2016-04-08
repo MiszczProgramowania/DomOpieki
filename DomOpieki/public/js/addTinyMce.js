@@ -3,7 +3,7 @@
  */
 
     tinymce.init({
-        selector: '[name="description"]',
+        selector: 'input[name="description"]',
         plugins: [             'autosave autoresize','advlist autolink lists link image charmap print preview hr anchor pagebreak',             'searchreplace wordcount visualblocks visualchars code fullscreen',             'insertdatetime media nonbreaking save table contextmenu directionality',             'emoticons template paste textcolor colorpicker textpattern imagetools'         ],
         width: '100%',
         height: 400,

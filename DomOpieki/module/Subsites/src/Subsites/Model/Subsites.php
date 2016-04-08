@@ -54,10 +54,6 @@ class Subsites implements InputFilterAwareInterface
             $inputFilter->add(array(
                 'name'     => 'description',
                 'required' => false,
-                'filters'  => array(
-                    array('name' => 'StripTags'),
-                    array('name' => 'StringTrim'),
-                ),
             ));
 
             $inputFilter->add(array(

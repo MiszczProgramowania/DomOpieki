@@ -28,6 +28,10 @@ return array(
                 'label' => 'Aktualności',
                 'route' => 'adminNews',
             ),
+            array(
+                'label' => 'Media',
+                'route' => 'media',
+                ),
         ),
     ),
     'service_manager' => array(

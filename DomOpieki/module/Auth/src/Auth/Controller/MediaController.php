@@ -21,7 +21,7 @@ class MediaController extends AbstractActionController
     }
     public function uploadFormAction()
     {
-        $form = new Media('upload-form');
+        $form = new Media('media');
 
         $request = $this->getRequest();
         if ($request->isPost()) {
@@ -35,7 +35,7 @@ class MediaController extends AbstractActionController
             if ($form->isValid()) {
                 $data = $form->getData();
                 // Form is valid, save the form!
-                return $this->redirect()->toRoute('upload-form/success');
+                return $this->redirect()->toRoute('media/success');
             }
         }
 

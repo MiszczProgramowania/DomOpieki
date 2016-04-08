@@ -25,13 +25,9 @@ return array(
                 ),
             ),
             'subsites' => array(
-                'type'    => 'segment',
+                'type'    => 'literal',
                 'options' => array(
-                    'route'    => '/subsites[/:action][/:id]',
-                    'constraints' => array(
-                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
-                        'id'     => '[0-9]+',
-                    ),
+                    'route'    => '/subsites',
                     'defaults' => array(
                         'controller' => 'Subsites\Controller\Public',
                         'action'     => 'index',

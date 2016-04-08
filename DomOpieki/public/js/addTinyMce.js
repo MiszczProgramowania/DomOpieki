@@ -9,7 +9,7 @@
         height: 400,
         autoresize_min_height: 400,
         language : 'pl',
-        toolbar1: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify ',
-        toolbar2: 'print preview media | forecolor backcolor emoticons | bullist numlist outdent indent | link image',
+        toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | link image print media | forecolor backcolor emoticons | bullist numlist outdent indent',
+
         image_advtab: true
     });

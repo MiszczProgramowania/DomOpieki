@@ -46,7 +46,7 @@ class NewsController extends AbstractActionController
                 $news->exchangeArray($form->getData());
                 $this->getNewsTable()->saveNews($news);
                 // Redirect to list of news
-                return $this->redirect()->toRoute('news');
+                return $this->redirect()->toRoute('adminNews');
             }
         }
         return array('form' => $form);
@@ -57,7 +57,7 @@ class NewsController extends AbstractActionController
     {
         $id = (int) $this->params()->fromRoute('id', 0);
         if (!$id) {
-            return $this->redirect()->toRoute('news', array(
+            return $this->redirect()->toRoute('adminNews', array(
                 'action' => 'add'
             ));
         }
@@ -68,7 +68,7 @@ class NewsController extends AbstractActionController
             $news = $this->getNewsTable()->getNews($id);
         }
         catch (\Exception $ex) {
-            return $this->redirect()->toRoute('news', array(
+            return $this->redirect()->toRoute('adminNews', array(
                 'action' => 'index'
             ));
         }
@@ -86,7 +86,7 @@ class NewsController extends AbstractActionController
                 $this->getNewsTable()->saveNews($news);
 
                 // Redirect to list of news
-                return $this->redirect()->toRoute('news');
+                return $this->redirect()->toRoute('adminNews');
             }
         }
 

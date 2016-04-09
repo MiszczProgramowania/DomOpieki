@@ -36,7 +36,7 @@
                     </button>
                     <a class="navbar-brand" href="<?php echo $this->url('home') ?>"><img style="height:30px" src="<?php echo $this->basePath('img/logo.png') ?>" alt="Dzienny Dom Pomocy"/>&nbsp;<?php echo $this->translate('Skeleton Application') ?></a></div>
                 <div class="collapse navbar-collapse">
-                    <?php echo 'test'.$this->BasePath();
+                    <?php
                     echo $this->navigation('navigation')->menu()->setPartial('partial/mainmenu.phtml'); ?>
                 </div><!--/.nav-collapse -->
             </div>

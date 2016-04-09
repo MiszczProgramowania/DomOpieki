@@ -25,7 +25,7 @@ return array(
             'site' => array(
                 'type'    => 'segment',
                 'options' => array(
-                    'route'    => '[/:id]',
+                    'route'    => '/[:id]',
                     'constraints' => array(
                         'id'     => '[0-9]+',
                     ),

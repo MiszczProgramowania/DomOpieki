@@ -3,7 +3,8 @@
     <?php
     foreach ($this->container as $page) {
         echo '<li>';
-        echo $this->navigation()->menu()->htmlify($page) . PHP_EOL;
+        $link = str_replace('href="','href="/',$this->navigation()->menu()->htmlify($page) . PHP_EOL);
+        echo $link;
         echo '</li>';
     }
     ?>

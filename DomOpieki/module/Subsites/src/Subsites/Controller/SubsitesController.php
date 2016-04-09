@@ -7,6 +7,7 @@ use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 use Subsites\Model\Subsites;          // <-- Add this import
 use Subsites\Form\SubsitesForm;
+use Zend\Filter\StripTags;
 
 class SubsitesController extends AbstractActionController
 {

@@ -9,7 +9,10 @@ $this->headTitle($title);
     <?php foreach ($news as $singleNews) : ?>
     <div class="col-md-6">
             <h2><?php echo $this->escapeHtml($singleNews->title);?></h2>
-            <p><?php echo $this->escapeHtml($singleNews->description);?></p>
+            <p><?php
+                echo $this->shortDescription($this->escapeHtml($singleNews->description),40);
+                ;?></p>
+
     </div>
     <?php endforeach; ?>
 

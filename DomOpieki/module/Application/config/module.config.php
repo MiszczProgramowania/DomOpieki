@@ -116,4 +116,9 @@ return array(
             ),
         ),
     ),
+    'view_helpers' => array(
+        'invokables' => array(
+            'shortDescription' => 'Application\View\Helper\ShortDescription',
+        ),
+    ),
 );

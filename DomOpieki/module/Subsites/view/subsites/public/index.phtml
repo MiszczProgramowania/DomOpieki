@@ -9,7 +9,7 @@ $this->headTitle($title);
     <?php foreach ($subsites as $singleSubsites) : ?>
     <div class="col-md-6">
             <h2><?php echo $this->escapeHtml($singleSubsites->title);?></h2>
-            <p><?php echo $this->escapeHtml($singleSubsites->description);?></p>
+            <p><?php echo $this->shortDescription($this->escapeHtml($singleSubsites->description),40);?></p>
     </div>
     <?php endforeach; ?>
 

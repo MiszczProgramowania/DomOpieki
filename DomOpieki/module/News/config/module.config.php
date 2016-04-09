@@ -46,4 +46,9 @@ return array(
             'news' => __DIR__ . '/../view',
         ),
     ),
+    'view_helpers' => array(
+        'invokables' => array(
+            'shortDescription' => 'Application\View\Helper\ShortDescription',
+        ),
+    ),
 );

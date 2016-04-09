@@ -7,11 +7,12 @@ use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 use Subsites\Model\Subsites;          // <-- Add this import
 use Subsites\Form\SubsitesForm;
+use Zend\Filter\StripTags;
 
 class SubsitesController extends AbstractActionController
 {
     protected $subsitesTable;
-
+    
     public function checkForAdmin()
     {
         $authService = $this->serviceLocator->get('auth_service');

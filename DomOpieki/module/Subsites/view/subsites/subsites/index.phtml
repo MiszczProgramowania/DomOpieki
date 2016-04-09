@@ -1,6 +1,7 @@
 <?php
     $title = $this->translate('Subsites');
     $this->headTitle($title);
+    $filter = new Zend\Filter\StripTags();
 ?>
 <h1><?php echo $this->escapeHtml($title); ?></h1>
 <p>
@@ -13,15 +14,16 @@
         <th>Opis</th>
         <th>&nbsp;</th>
     </tr>
+
     <?php foreach ($subsites as $singleSubsites) : ?>
         <tr>
             <td><?php echo $this->escapeHtml($singleSubsites->title);?></td>
-            <td><?php echo $this->escapeHtml($singleSubsites->description);?></td>
+            <td><?php echo $filter->filter($singleSubsites->description)?></td>
             <td>
                 <a href="<?php echo $this->url('adminSubsites',
                     array('action'=>'edit', 'id' => $singleSubsites->id));?>">Edycja</a>
                 <a href="<?php echo $this->url('adminSubsites',
-                    array('action'=>'delete', 'id' => $singleSubsites->id));?>">Usuń</a>
+                    array('action'=>'delete', 'id' => $singleSubsites->id));?>">Usu&#324;</a>
             </td>
         </tr>
     <?php endforeach; ?>

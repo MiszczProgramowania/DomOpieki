@@ -35,4 +35,15 @@ class PublicController extends AbstractActionController
         'subsite' => $this->subsitesSingle,
     ));
     }
+    public function singleUrlAction()
+    {
+        $url = (string) $this->params()->fromRoute('id', 0);
+        $table = $this->getSubsitesTable();
+
+        $this->subsitesSingle = $table->getSubsitesUrl($url);
+
+        return new ViewModel(array(
+            'subsite' => $this->subsitesSingle,
+        ));
+    }
 }

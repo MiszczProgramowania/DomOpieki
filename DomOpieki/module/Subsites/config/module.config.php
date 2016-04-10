@@ -34,6 +34,19 @@ return array(
                     ),
                 ),
             ),
+            'site' => array(
+                'type'    => 'segment',
+                'options' => array(
+                    'route'    => '[/:id]',
+                    'constraints' => array(
+                        'id'     => '[a-zA-Z][a-zA-Z0-9_-]*',
+                    ),
+                    'defaults' => array(
+                        'controller' => 'Subsites\Controller\Public',
+                        'action'     => 'singleUrl',
+                    ),
+                ),
+            ),
         ),
     ),
 

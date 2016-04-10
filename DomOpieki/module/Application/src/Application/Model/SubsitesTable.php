@@ -34,6 +34,18 @@ class SubsitesTable
         }
         return $row;
     }
+    public function getSubsitesUrl($url)
+    {
+
+        $url  = (string) $url;
+        $rowset = $this->tableGateway->select(array('url' => $url));
+        $row = $rowset->current();
+        if (!$row) {
+            throw new \Exception("Nie znaleziono wiersza o $url");
+        }
+        return $row;
+    }
+
 
     public function saveSubsites(Subsites $subsites)
     {

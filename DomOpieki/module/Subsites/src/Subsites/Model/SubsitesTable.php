@@ -48,6 +48,7 @@ class SubsitesTable
 
     public function saveSubsites(Subsites $subsites)
     {
+        $subsites->url = $safe = preg_replace('/^-+|-+$/', '', strtolower(preg_replace('/[^a-zA-Z0-9]+/', '-', $subsites->title)));
         $data = array(
             'title'  => $subsites->title,
             'description' => $subsites->description,

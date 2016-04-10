@@ -114,7 +114,7 @@ class SubsitesController extends AbstractActionController
             }
 
             // Redirect to list of subsitess
-            return $this->redirect()->toRoute('subsites');
+            return $this->redirect()->toRoute('adminSubsites');
         }
 
         return array(

@@ -51,6 +51,7 @@ class SubsitesTable
         $data = array(
             'title'  => $subsites->title,
             'description' => $subsites->description,
+            'url' => $subsites->url
         );
 
         $id = (int) $subsites->id;

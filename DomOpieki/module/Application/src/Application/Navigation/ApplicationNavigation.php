@@ -17,13 +17,13 @@ class ApplicationNavigation extends DefaultNavigationFactory
         $navigation = array();
 
         if (null === $this->pages) {
-            $pages = $serviceLocator->get('Application\Model\SubsitesTable')->fetchAll();
+            $pages = $serviceLocator->get('Subsites\Model\SubsitesTable')->fetchAll();
 
             if ($pages) { // ResultSet
                 foreach ($pages as $key => $page) {
                     $navigation[] = array(
                         'label' => $page->title,
-                        'uri'   => $page->id
+                        'uri'   => $page->url
                     );
                 }
             }

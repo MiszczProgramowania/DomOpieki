@@ -19,6 +19,7 @@ class Subsites implements InputFilterAwareInterface
     public $id;
     public $title;
     public $description;
+    public $url;
 
     protected $inputFilter;
 
@@ -27,6 +28,7 @@ class Subsites implements InputFilterAwareInterface
         $this->id     = (!empty($data['id'])) ? $data['id'] : null;
         $this->title  = (!empty($data['title'])) ? $data['title'] : null;
         $this->description = (!empty($data['description'])) ? $data['description'] : null;
+        $this->url = (!empty($data['url'])) ? $data['url'] : null;
     }
     public function getArrayCopy()
     {

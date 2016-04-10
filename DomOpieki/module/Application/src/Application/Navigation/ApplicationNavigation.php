@@ -23,7 +23,7 @@ class ApplicationNavigation extends DefaultNavigationFactory
                 foreach ($pages as $key => $page) {
                     $navigation[] = array(
                         'label' => $page->title,
-                        'uri'   => $page->url
+                        'uri'   => 'info/'.$page->url
                     );
                 }
             }

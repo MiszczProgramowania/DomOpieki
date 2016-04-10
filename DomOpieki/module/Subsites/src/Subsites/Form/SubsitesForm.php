@@ -22,6 +22,10 @@ class SubsitesForm extends Form
             'type' => 'Hidden',
         ));
         $this->add(array(
+            'name' => 'url',
+            'type' => 'Text',
+        ));
+        $this->add(array(
             'name' => 'title',
             'type' => 'Text',
             'options' => array(

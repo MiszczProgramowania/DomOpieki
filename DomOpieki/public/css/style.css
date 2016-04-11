@@ -1,7 +1,10 @@
 body {
     padding-top: 60px;
     padding-bottom: 40px;
+    font-family: 'Hind', sans-serif;
+    font-size:19px;
 }
+
 
 .zf-green {
     color: #68b604;
@@ -34,4 +37,39 @@ div.container a.brand {
     background: url("../img/zf2-logo.png") no-repeat scroll 0 10px transparent;
     margin-left: 0;
     padding: 8px 20px 12px 40px;
+}
+hr{
+    border: 1px solid #A25324;
+}
+h1, h2, h3, h4, h5
+{
+    font-family: Gabriela;
+}
+h1
+{
+    font-size: 2em;
+    text-align:center;
+    text-transform: uppercase;
+}
+.navbar-nav li
+{
+    line-height: 60px;
+    height:60px;
+}
+.navbar-nav li:hover
+{
+    background: #A25324;
+}
+.navbar-nav li a
+{
+    line-height: 30px;
+}
+.navbar
+{
+    background: rgba(0,0,0, 0.3);
+
+}
+.navbar-inverse .navbar-nav > li > a
+{
+    color:white;
 }

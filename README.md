@@ -21,7 +21,7 @@ AditionalTasks:
 1. Strony powinny miec w url zakodowana nazwe a nie id <DONE>
 2. Admin panel powinien miec dodatkowe menu z linkami do swoich funkcjonalnosci
 3. Potrzebny by byl file uploader w adminie polaczony z newsami i podstronami
-
+4. Slider na stronie glownej podpiety pod panel admina
 #### manualne polaczenie z baza
     MySQL Hostname: 33.33.33.10
     MySQL Server Port: 3306

@@ -1,6 +1,7 @@
 <?php
     $title = $this->translate('Edycja Podstron');
     $this->headTitle($title);
+$filter
 ?>
 <h1><?php echo $this->escapeHtml($title); ?></h1>
 <p>
@@ -10,14 +11,14 @@
 <table class="table">
     <tr>
         <th>Tytul</th>
-        <th>Opis</th>
+        <th>Kod Html</th>
         <th>&nbsp;</th>
     </tr>
 
     <?php foreach ($subsites as $singleSubsites) : ?>
         <tr>
             <td><a href="/info/<?php echo $this->escapeHtml($singleSubsites->url); ?>"><?php echo $this->escapeHtml($singleSubsites->title);?></a></td>
-            <td><?php echo $this->shortDescription($singleSubsites->description,200);?></td>
+            <td><?php echo $this->shortDescription($this->escapeHtml($singleSubsites->description),200);?></td>
             <td>
                 <a href="/info/<?php echo $this->escapeHtml($singleSubsites->url);?>">Przeglądaj</a>
                 <a href="<?php echo $this->url('adminSubsites',

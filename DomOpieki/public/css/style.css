@@ -66,10 +66,29 @@ h1
 }
 .navbar
 {
-    background: rgba(0,0,0, 0.3);
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#a25324+0,fff200+100&0.82+0,0.8+100 */
+    background: -moz-linear-gradient(top,  rgba(162,83,36,0.82) 0%, rgba(255,242,0,0.8) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  rgba(162,83,36,0.82) 0%,rgba(255,242,0,0.8) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  rgba(162,83,36,0.82) 0%,rgba(255,242,0,0.8) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d1a25324', endColorstr='#ccfff200',GradientType=0 ); /* IE6-9 */
+
 
 }
 .navbar-inverse .navbar-nav > li > a
 {
-    color:white;
+    color:rgb(51, 51, 51);
+}
+.bloczek
+{
+    height:300px;
+    background:red;
+}
+.bloczekdwa
+{
+    height:300px;
+    background:blue;
+}
+.navbar-inverse .navbar-brand
+{
+    color:rgb(51, 51, 51);
 }

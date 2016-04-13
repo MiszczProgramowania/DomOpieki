@@ -6,14 +6,17 @@ $this->headTitle($title);
 <h1><?php echo $this->escapeHtml($title); ?></h1>
     <?php foreach ($news as $singleNews) : ?>
     <div class="col-md-6">
-        <img src="<?php echo $this->escapeHtml($singleNews->imgUrl);?>"/>
+        <a href="/news/single/<?php echo $this->escapeHtml($singleNews->id)?>"><img src="<?php echo $this->escapeHtml($singleNews->imgList[0]);?>"/></a>
     </div>
     <div class="col-md-6">
-            <h2><?php echo $this->escapeHtml($singleNews->title);?></h2>
+        <a href="/news/single/<?php echo $this->escapeHtml($singleNews->id)?>"> <h2><?php echo $this->escapeHtml($singleNews->title);?></h2></a>
         <p><?php
             echo $this->shortDescription($this->escapeHtml($singleNews->description),40);
             ;?>
         </p>
+        <a href="/news/single/<?php echo $this->escapeHtml($singleNews->id)?>">
+            Więcej >>
+        </a>
     </div>
         <div class="clearfix"></div>
     <?php endforeach; ?>

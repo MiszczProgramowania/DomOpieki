@@ -20,6 +20,7 @@ class News implements InputFilterAwareInterface
     public $title;
     public $description;
     public $imgUrl;
+    public $imgList=[];
 
     protected $inputFilter;
 
@@ -29,6 +30,7 @@ class News implements InputFilterAwareInterface
         $this->title  = (!empty($data['title'])) ? $data['title'] : null;
         $this->description = (!empty($data['description'])) ? $data['description'] : null;
         $this->imgUrl = (!empty($data['imgUrl'])) ? $data['imgUrl'] : null;
+        $this->imgList[]=$this->imgUrl;
     }
     public function getArrayCopy()
     {

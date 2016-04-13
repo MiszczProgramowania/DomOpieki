@@ -17,7 +17,7 @@ https://drive.google.com/file/d/0B5y6Z-AUEDUYMnVMV3VIcEgxOHI1RkQ5U0M0ekR3ak5rN1o
 6. Ergonomia użytkownika
 
 AditionalTasks:
-
+0. Single news zdebugowac i naprawic template
 1. Strony powinny miec w url zakodowana nazwe a nie id <DONE>
 2. Admin panel powinien miec dodatkowe menu z linkami do swoich funkcjonalnosci
 3. Potrzebny by byl file uploader w adminie polaczony z newsami i podstronami

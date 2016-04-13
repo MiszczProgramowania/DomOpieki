@@ -5,17 +5,27 @@ $this->headTitle($title);
 <h1><?php echo $this->escapeHtml($news->title);?></h1>
 <div class="row">
     <div class="col-md-6">
-        <img src="<?php echo $this->escapeHtml($news->imageList[0]);?>"/>
+        <img src="<?php echo $this->escapeHtml($news->imgList[0]);?>"/>
     </div>
-            <div class="col-md-6">
-                <div class="row">
-                    <div class="col-sm-6">
+    <?php
+    $length = count($news->imgList);
+    if ($length>0) :?>
+        <?php for ($x = 1; $x < $length; $x++) : ?>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-sm-6">
 
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-12">
-                <p><?php echo $news->description;?></p>
-            </div>
+                <div class="col-md-12">
+                    <p><?php echo $news->description;?></p>
+                </div>
+        <?php endfor; ?>
+    <?php else : ?>
+        <div class="col-md-6">
+            <p><?php echo $news->description;?></p>
+        </div>
+    <?php endif; ?>
 
 </div>

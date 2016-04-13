@@ -11,12 +11,14 @@
     <tr>
         <th>Tytul</th>
         <th>Opis</th>
+        <th>Miniaturka</th>
         <th>&nbsp;</th>
     </tr>
     <?php foreach ($news as $singleNews) : ?>
         <tr>
             <td><?php echo $this->escapeHtml($singleNews->title);?></td>
             <td><?php echo $this->shortDescription($this->escapeHtml($singleNews->description),40);?></td>
+            <td><img style="max-width:100px;" src="<?php echo $this->escapeHtml($singleNews->imgUrl);?>"/></td>
             <td>
                 <a href="<?php echo $this->url('adminNews',
                     array('action'=>'edit', 'id' => $singleNews->id));?>">Edycja</a>

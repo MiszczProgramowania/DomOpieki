@@ -3,7 +3,6 @@ body {
     padding-bottom: 40px;
     font-family: 'Hind', sans-serif;
     font-size:19px;
-    background: url("../img/confectionary.png");
 }
 div.container a.brand {
     background: url("../img/zf2-logo.png") no-repeat scroll 0 10px transparent;

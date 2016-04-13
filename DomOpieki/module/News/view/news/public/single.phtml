@@ -4,7 +4,7 @@ $this->headTitle($title);
 ?>
 <div class="row">
     <h1><?php echo $this->escapeHtml($title); ?></h1>
-
+            <img src="<?php echo $this->escapeHtml($news->imageUrl);?>"/>
             <h2><?php echo $this->escapeHtml($news->title);?></h2>
             <p><?php echo $news->description;?></p>
     

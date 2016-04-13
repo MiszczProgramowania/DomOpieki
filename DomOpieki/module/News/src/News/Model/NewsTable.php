@@ -40,6 +40,7 @@ class NewsTable
         $data = array(
             'title'  => $news->title,
             'description' => $news->description,
+            'imgUrl' => $news->imgUrl
         );
 
         $id = (int) $news->id;

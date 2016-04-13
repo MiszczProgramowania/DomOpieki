@@ -29,12 +29,20 @@ class NewsForm extends Form
             ),
         ));
         $this->add(array(
+            'name' => 'imgUrl',
+            'type' => 'Text',
+            'options' => array(
+                'label' => 'ImageUrl',
+            ),
+        ));
+        $this->add(array(
             'name' => 'description',
             'type' => 'Text',
             'options' => array(
                 'label' => 'Description',
             ),
         ));
+
         $this->add(array(
             'name' => 'submit',
             'type' => 'Submit',

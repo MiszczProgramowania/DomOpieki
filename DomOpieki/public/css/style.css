@@ -16,6 +16,7 @@ hr{
 h1, h2, h3, h4, h5
 {
     font-family: Gabriela;
+    font-weight: 100;
 }
 h1
 {
@@ -26,7 +27,6 @@ h1
 .navbar-nav li
 {
     line-height: 60px;
-    height:60px;
 }
 .navbar-nav li:hover
 {

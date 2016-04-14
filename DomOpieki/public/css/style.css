@@ -64,8 +64,8 @@ h1
     color:rgb(51, 51, 51);
 }
 
+
 .brazowy {
-    font-size:15px;
     background: #dcddde;
     margin-bottom: 40px;
     padding: 15px;
@@ -74,4 +74,27 @@ h1
 .brazowy textarea
 {
     resize: none;
+    color: black;
 }
+.form-control {
+    color: black;
+}
+.form-control::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    black;
+}
+.form-control:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    black;
+    opacity:  1;
+}
+.form-control::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    black;
+    opacity:  1;
+}
+.form-control:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color:    black;
+}
+.navbar-inverse{
+    border:none;
+}
+
+

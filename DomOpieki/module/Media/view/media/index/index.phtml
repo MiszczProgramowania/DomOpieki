@@ -16,9 +16,7 @@ $this->headTitle($title);
 <?php foreach ($files as $file) : ?>
 <tr>
     <td><?php echo $file;?></td>
-    <td>
-        <?php echo '/upload/'.urlencode($file);?>
-    </td>
+    <td><?php echo $this->serverUrl().'/upload/'.urlencode($file);?></td>
     <td>
         <a href="<?php echo '/upload/'.urlencode($file);?>">Zobacz</a>
 <!--        <a href="--><?php //echo $this->url('media/default',

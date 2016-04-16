@@ -24,13 +24,17 @@ class News implements InputFilterAwareInterface
 
     protected $inputFilter;
 
+    private function getImageList($imgUrl){
+        return explode(';',$imgUrl);
+    }
+
     public function exchangeArray($data)
     {
         $this->id     = (!empty($data['id'])) ? $data['id'] : null;
         $this->title  = (!empty($data['title'])) ? $data['title'] : null;
         $this->description = (!empty($data['description'])) ? $data['description'] : null;
         $this->imgUrl = (!empty($data['imgUrl'])) ? $data['imgUrl'] : null;
-        $this->imgList[]=$this->imgUrl;
+        $this->imgList=$this->getImageList($this->imgUrl);
     }
     public function getArrayCopy()
     {

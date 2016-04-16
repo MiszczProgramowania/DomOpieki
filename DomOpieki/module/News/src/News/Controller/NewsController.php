@@ -100,7 +100,7 @@ class NewsController extends AbstractActionController
     {
         $id = (int) $this->params()->fromRoute('id', 0);
         if (!$id) {
-            return $this->redirect()->toRoute('news');
+            return $this->redirect()->toRoute('adminNews');
         }
 
         $request = $this->getRequest();
@@ -113,7 +113,7 @@ class NewsController extends AbstractActionController
             }
 
             // Redirect to list of newss
-            return $this->redirect()->toRoute('news');
+            return $this->redirect()->toRoute('adminNews');
         }
 
         return array(

@@ -10,15 +10,17 @@ $this->headTitle($title);
     <?php
     $length = count($news->imgList);
     if ($length>1) :?>
+        <div class="col-md-6">
+        <div class="row">
         <?php for ($x = 1; $x < $length; $x++) : ?>
-            <div class="col-md-6">
-                <div class="row">
+
                     <div class="col-sm-6">
                         <img src="<?php echo $this->escapeHtml($news->imgList[$x]);?>"/>
                     </div>
-                </div>
-            </div>
+
         <?php endfor; ?>
+        </div>
+        </div>
             <div class="col-md-12">
                 <p><?php echo $news->description;?></p>
             </div>

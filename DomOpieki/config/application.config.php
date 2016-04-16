@@ -11,7 +11,8 @@ return array(
         'Application',
         'Auth',
         'News',
-        'Subsites'
+        'Subsites',
+        'CsnFileManager'
     ),
 
     // These are various options for the listeners attached to the ModuleManager

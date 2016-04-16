@@ -1,21 +1,21 @@
 <?php
 
-namespace CsnFileManager;
+namespace Media;
 
 return array(
 	'controllers' => array(
         'invokables' => array(
-            'CsnFileManager\Controller\Index' => 'CsnFileManager\Controller\IndexController',		
+            'Media\Controller\Index' => 'Media\Controller\IndexController',		
         ),
     ),	
     'router' => array(
         'routes' => array(
-			'csn-file-manager' => array(
+			'media' => array(
 				'type'    => 'Literal',
 				'options' => array(
-					'route'    => '/csn-file-manager',
+					'route'    => '/admin/media',
 					'defaults' => array(
-						'__NAMESPACE__' => 'CsnFileManager\Controller',
+						'__NAMESPACE__' => 'Media\Controller',
 						'controller'    => 'Index',
 						'action'        => 'index',
 					),

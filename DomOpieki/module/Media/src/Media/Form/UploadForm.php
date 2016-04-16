@@ -1,6 +1,6 @@
 <?php
 // File: UploadForm.php // File Post-Redirect-Get Plugin
-namespace CsnFileManager\Form;
+namespace Media\Form;
 
 use Zend\InputFilter;
 use Zend\Form\Element;
@@ -23,7 +23,7 @@ class UploadForm extends Form
     {
         // File Input
         $file = new Element\File('image-file');
-        $file->setLabel('Avatar Image Upload')
+        $file->setLabel('Wybierz plik')
              ->setAttribute('id', 'image-file')
              ->setAttribute('multiple', true);   // That's it
         $this->add($file);
@@ -32,7 +32,7 @@ class UploadForm extends Form
             'name' => 'submit',
             'attributes' => array(
                 'type'  => 'submit',
-                'value' => 'Upload',
+                'value' => 'Wyślij',
                 'id' => 'submitbutton',
             ),
         ));

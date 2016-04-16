@@ -1,0 +1,31 @@
+<?php
+$title = 'Media';
+$this->headTitle($title);
+?>
+<h1><?php echo $this->escapeHtml($title); ?></h1>
+<p>
+    <a href="<?php echo $this->url('media/default', array('controller' => 'index', 'action'=>'upload'));?>">Kliknij aby wysłać nowy plik</a>
+</p>
+
+<table class="table">
+<tr>
+    <th>Nazwa</th>
+    <th>&nbsp;</th>
+    <th>&nbsp;</th>
+</tr>
+<?php foreach ($files as $file) : ?>
+<tr>
+    <td><?php echo $file;?></td>
+    <td>
+        <a href="<?php echo $this->url('media/default',
+            array('controller' => 'index', 'action'=>'get-image', 'id' => urlencode($file)));?>">Zobacz</a>
+<!--        <a href="--><?php //echo $this->url('media/default',
+//            array('controller' => 'index', 'action'=>'view', 'id' => urlencode($file)));?><!--">View</a>-->
+        <a href="<?php echo $this->url('media/default', // SUPER IMPORTANT use media/<segment> NOT ONLY grace-drops
+            array('controller' => 'index', 'action'=>'download', 'id' => urlencode($file)));?>">Pobierz</a>
+        <a href="<?php echo $this->url('media/default', // SUPER IMPORTANT use media/<segment>
+            array('controller' => 'index', 'action'=>'delete', 'id' => urlencode($file)));?>">Skasuj</a>
+    </td>
+</tr>
+<?php endforeach; ?>
+</table>

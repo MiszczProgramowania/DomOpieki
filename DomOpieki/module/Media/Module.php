@@ -1,6 +1,6 @@
 <?php
 
-namespace CsnFileManager;
+namespace Media;
 
 class Module
 {

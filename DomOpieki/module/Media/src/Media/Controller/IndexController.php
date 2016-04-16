@@ -1,11 +1,10 @@
 <?php
 
-namespace CsnFileManager\Controller;
+namespace Media\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
-
-use CsnFileManager\Form\UploadForm;
+use Media\Form\UploadForm;
 
 class IndexController extends AbstractActionController
 {
@@ -61,7 +60,7 @@ class IndexController extends AbstractActionController
 				// Form is valid, save the form!
 				$this->setFileNames($data);
 				// The data can be saved in the DataBase				
-				return $this->redirect()->toRoute('csn-file-manager');
+				return $this->redirect()->toRoute('media');
 			}
 		}		
 		
@@ -100,7 +99,7 @@ class IndexController extends AbstractActionController
 		$file = urldecode($this->params()->fromRoute('id'));
 		$filename = $this->_dir . DIRECTORY_SEPARATOR . $file;
 		unlink ($filename);
-		return $this->redirect()->toRoute('csn-file-manager');		
+		return $this->redirect()->toRoute('media');		
 		return new ViewModel(array());
 	}
 	

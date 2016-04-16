@@ -12,7 +12,7 @@ return array(
         'Auth',
         'News',
         'Subsites',
-        'CsnFileManager'
+        'Media'
     ),
 
     // These are various options for the listeners attached to the ModuleManager

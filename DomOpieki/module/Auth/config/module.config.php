@@ -41,18 +41,6 @@ return array(
                     )
                 ),
             ),
-            'media' => array(
-                'type' => 'literal',
-                'options' => array(
-                    'route' => '/admin/media',
-                    'defaults' => array(
-                        '__NAMESPACE__' => 'Auth\Controller',
-                        'controller' => 'Media',
-                        'action' => 'uploadForm',
-                    )
-                ),
-                'may_terminate' => true,
-            ),
         ),
     ),
     'service_manager' => array(),
@@ -60,7 +48,6 @@ return array(
         'invokables' => array(
             'Auth\Controller\Login' => 'Auth\Controller\LoginController',
             'Auth\Controller\Index' => 'Auth\Controller\IndexController',
-            'Auth\Controller\Media' => 'Auth\Controller\MediaController',
         ),
     ),
     'view_manager' => array(

@@ -10,15 +10,17 @@ $this->headTitle($title);
 <table class="table">
 <tr>
     <th>Nazwa</th>
-    <th>&nbsp;</th>
+    <th>Link</th>
     <th>&nbsp;</th>
 </tr>
 <?php foreach ($files as $file) : ?>
 <tr>
     <td><?php echo $file;?></td>
     <td>
-        <a href="<?php echo $this->url('media/default',
-            array('controller' => 'index', 'action'=>'get-image', 'id' => urlencode($file)));?>">Zobacz</a>
+        <?php echo '/upload/'.urlencode($file);?>
+    </td>
+    <td>
+        <a href="<?php echo '/upload/'.urlencode($file);?>">Zobacz</a>
 <!--        <a href="--><?php //echo $this->url('media/default',
 //            array('controller' => 'index', 'action'=>'view', 'id' => urlencode($file)));?><!--">View</a>-->
         <a href="<?php echo $this->url('media/default', // SUPER IMPORTANT use media/<segment> NOT ONLY grace-drops

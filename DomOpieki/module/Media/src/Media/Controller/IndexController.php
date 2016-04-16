@@ -12,11 +12,16 @@ class IndexController extends AbstractActionController
 	
 	public function init()
 	{
+		$authService = $this->serviceLocator->get('auth_service');
+		if (! $authService->hasIdentity()) {
+			// if not log in, redirect to login page
+			return $this->redirect()->toUrl('/login');
+		}
 		$config = $this->getServiceLocator()->get('Config');
 		$fileManagerDir = $config['file_manager']['dir'];
 
 		$this->_dir = realpath($fileManagerDir) .
-			'data/upload';
+			'public/upload';
 	}
 
     public function indexAction()

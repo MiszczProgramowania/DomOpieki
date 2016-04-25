@@ -2,7 +2,8 @@
 $title = $this->escapeHtml($subsite->title);
 $this->headTitle($title);
 ?>
-<div class="row">
-            <h1><?php echo $this->escapeHtml($subsite->title);?></h1>
+<h1 class="page-title"><?php echo $this->escapeHtml($subsite->title);?></h1>
+<div class="subsite">
+
             <p><?php echo $subsite->description;?></p>
 </div>

@@ -15,7 +15,10 @@ class ShortDescription extends AbstractHelper
 
     public function __invoke($string, $length)
     {
-        if(strlen($string) > $length) { return substr($string,0,$length).' ... ';}
+        if(strlen($string) > $length) {
+            return substr($string,0,$length).' ... ';
+        }
         else { return $string; }
+
     }
 }

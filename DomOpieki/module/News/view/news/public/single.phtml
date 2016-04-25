@@ -1,34 +1,54 @@
 <?php
 $title = $this->translate('Aktualność');
 $this->headTitle($title);
+$colors = ['rgba(34, 143, 206','rgba(21, 12, 70','rgba(172, 31, 103','rgba(225, 29, 39','rgba(49, 132, 80'];
+$chosenColor=array_rand($colors);
 ?>
+<div id="news-single" style="background:<?php echo $colors[$chosenColor] ?> ,0.05)">
 <h1><?php echo $this->escapeHtml($news->title);?></h1>
-<div class="row">
+    <div class="flex-content">
     <div class="col-md-6">
-        <img src="<?php echo $this->escapeHtml($news->imgList[0]);?>"/>
+        <div class="max">
+            <div class="thumbnail">
+            <?php if ($news->imgList[0]==''):?>
+                <img src="http://ddp.mikolow.eu/img/logo.png"/>
+            <?php else:?>
+            <img src="<?php echo $this->escapeHtml($news->imgList[0]);?>"/>
+            <?php endif;?>
+            </div>
+        </div>
     </div>
     <?php
     $length = count($news->imgList);
     if ($length>1) :?>
         <div class="col-md-6">
         <div class="row">
+            <div class="rest">
         <?php for ($x = 1; $x < $length; $x++) : ?>
 
                     <div class="col-sm-6">
-                        <img src="<?php echo $this->escapeHtml($news->imgList[$x]);?>"/>
+                        <img class="thumbnail" src="<?php echo $this->escapeHtml($news->imgList[$x]);?>"/>
                     </div>
 
         <?php endfor; ?>
+            </div>
+        </div>
         </div>
         </div>
             <div class="col-md-12">
-                <p><?php echo $news->description;?></p>
+                <div class="description">
+                    <p><?php echo $news->description;?></p>
+                </div>
             </div>
+    <div class="clearfix"></div>
 
     <?php else: ?>
         <div class="col-md-6">
-            <p><?php echo $news->description;?></p>
+            <div class="description-single">
+                <p><?php echo $news->description;?></p>
+            </div>
         </div>
     <?php endif; ?>
 
+</div>
 </div>

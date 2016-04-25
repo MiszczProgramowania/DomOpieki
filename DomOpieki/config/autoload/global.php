@@ -17,6 +17,7 @@ return array(
         'dsn'            => 'mysql:dbname=15094637_ddp;host=localhost',
     ),
     'navigation' => array(
+
         // navigation with name default
         'admin' => array(
             array(

@@ -1,3 +1,6 @@
+html, body {
+    height: 100%;
+}
 body {
     padding-top: 60px;
     font-family: 'Hind', sans-serif;
@@ -45,32 +48,62 @@ h1
 }
 .navbar-nav li a
 {
-    line-height: 30px;
+    line-height: 80px;
 }
 .navbar
 {
-    background: rgba(162, 83, 36, 1);
-
+    background: white;
+    border-top:10px solid #A25324;
+    border-bottom:10px solid #F7961E;
 }
 .navbar-inverse .navbar-nav > li > a
 {
-    color:white;
+    color:#A25324;
     font-weight: 600;
     text-transform: uppercase;
     transition: all 0.5s linear;
 }
 .navbar-inverse .navbar-nav > li > a:hover{
-    color: #F7961E;
-    background: white;
+    color: white;
+    background: #F7961E;
 }
 .navbar-header{
     background:#FFFFFF;
+}
+.navbar-header>div#title{
+    height: 110px;
+    font-weight: 600;
+    float:left;
+    width:300px;
+    color: #A25324;
+    text-transform: uppercase;
+    text-align: center;
+    //flex
+display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    //flexend
 }
 .navbar-brand{
     padding: 5px 5px;
 }
 .navbar-brand img{
-    height:50px;
+    height:100px;
 }
 .navbar-inverse .navbar-brand
 {
@@ -111,9 +144,6 @@ h1
 .form-control:-ms-input-placeholder { /* Internet Explorer 10-11 */
     color:    black;
 }
-.navbar-inverse{
-    border:none;
-}
 
 .kropki
 {
@@ -125,77 +155,8 @@ h1
 .kropki li p{
     color:rgb(51, 51, 51);
 }
-#carousel{
-    position:absolute;
-    left:0;
-    top:0;
-    width:100%;
-}
-#carousel .slider {
-    background: white;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    text-align: center;
-}
-@media screen and (min-width: 992px){
 
-    #carousel .slider {
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: row; /* works with row or column */
-    flex-direction: row;
-    -webkit-align-items: center;
-    align-items: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-}
-}
-#carousel h2{
-    font-size: 3em;
-    text-transform: uppercase;
-}
-#carousel p{
-    font-size: 2.6em;
-    font-weight: 200;
-}
-#carousel .slider .first{
-     padding-top:120px;
-     padding-bottom:60px;
-     padding-left:60px;
-     padding-right:30px;
- }
-#carousel .slider .second{
-    margin-top:60px;
-    margin-bottom:60px;
-    margin-left:30px;
-    margin-right:60px;
-    padding:30px;
-}
-#carousel .slider .first-invert{
 
-    margin-top:60px;
-    margin-bottom:60px;
-    margin-left:30px;
-    margin-right:60px;
-    padding:30px;
-
-}
-#carousel .slider .second-invert{
-    padding-top:120px;
-    padding-bottom:60px;
-    padding-left:60px;
-    padding-right:30px;
-}
-#carousel .fa-smile-o{
-    font-size: 500px;
-    color: #F7961E;
-}
-
-#carousel .fa-phone-square{
-    font-size: 400px;
-    color: #F7961E;
-}
 
 .miniatura, .text{
     height:400px;
@@ -278,4 +239,26 @@ h1{
 .subsite{
     padding-left:2%;
     padding-right:2%;
+}
+footer{
+    border-top:10px solid #F7961E;
+    background:#A25324;
+}
+footer p{
+    margin-top: 20px;
+    text-align: center;
+    color: white;
+    font-weight: 300;
+}
+.page-wrap {
+    min-height: 100%;
+    /* equal to footer height */
+    margin-bottom: -100px;
+}
+.page-wrap:after {
+    content: "";
+    display: block;
+}
+.site-footer, .page-wrap:after {
+    height: 100px;
 }

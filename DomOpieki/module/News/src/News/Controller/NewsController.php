@@ -12,6 +12,7 @@ class NewsController extends AbstractActionController
 {
     protected $newsTable;
 
+ 
     public function checkForAdmin()
     {
         $authService = $this->serviceLocator->get('auth_service');
@@ -33,6 +34,7 @@ class NewsController extends AbstractActionController
 
     public function addAction()
     {
+        
         $form = new NewsForm();
         $form->get('submit')->setValue('Add');
 

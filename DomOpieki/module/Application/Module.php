@@ -46,7 +46,18 @@ class Module
     {
         return array(
             'factories' => array(
-                'Application\Model\SubsitesTable' =>  function($sm) {
+                'News\Model\NewsTable' =>  function($sm) {
+                    $tableGateway = $sm->get('NewsTableGateway');
+                    $table = new NewsTable($tableGateway);
+                    return $table;
+                },
+                'NewsTableGateway' => function ($sm) {
+                    $dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
+                    $resultSetPrototype = new ResultSet();
+                    $resultSetPrototype->setArrayObjectPrototype(new News());
+                    return new TableGateway('news', $dbAdapter, null, $resultSetPrototype);
+                },
+                'Subsites\Model\SubsitesTable' =>  function($sm) {
                     $tableGateway = $sm->get('SubsitesTableGateway');
                     $table = new SubsitesTable($tableGateway);
                     return $table;

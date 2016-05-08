@@ -21,6 +21,7 @@ class NewsTable
     public function fetchAll()
     {
         $resultSet = $this->tableGateway->select();
+
         return $resultSet;
     }
 

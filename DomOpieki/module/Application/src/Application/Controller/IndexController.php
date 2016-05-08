@@ -14,8 +14,32 @@ use Zend\View\Model\ViewModel;
 
 class IndexController extends AbstractActionController
 {
+    protected $newsTable;
+    protected $newsSingle;
+    protected $subsitesTable;
+    protected $subsitesSingle;
+
     public function indexAction()
     {
-        return new ViewModel();
+        return new ViewModel(array(
+            'news' => $this->getNewsTable()->fetchAll(),
+            'subsites' => $this->getSubsitesTable()->fetchAll(),
+        ));
+    }
+    public function getNewsTable()
+    {
+        if (!$this->newsTable) {
+            $sm = $this->getServiceLocator();
+            $this->newsTable = $sm->get('News\Model\NewsTable');
+        }
+        return $this->newsTable;
+    }
+        public function getSubsitesTable()
+    {
+        if (!$this->subsitesTable) {
+            $sm = $this->getServiceLocator();
+            $this->subsitesTable = $sm->get('Subsites\Model\SubsitesTable');
+        }
+        return $this->subsitesTable;
     }
 }

@@ -1,15 +1,12 @@
 <?php
 namespace News;
 
-
 use Zend\ModuleManager\Feature\AutoloaderProviderInterface;
 use Zend\ModuleManager\Feature\ConfigProviderInterface;
 use Zend\Db\ResultSet\ResultSet;
 use Zend\Db\TableGateway\TableGateway;
 use News\Model\News;
 use News\Model\NewsTable;
-
-
 
 class Module implements AutoloaderProviderInterface, ConfigProviderInterface
 {

@@ -67,6 +67,55 @@
     </a>
 
 </div>
+
+
+    <div class="col-md-9">
+        <div class="box" id="news">
+            <h2>Aktualności</h2>
+            <?php foreach ($news as $singleNews) : ?>
+                <div class="row">
+                    <div class="col-md-3">
+                        <a href="/news/single/<?php echo $this->escapeHtml($singleNews->id)?>">
+                            <?php if ($singleNews->imgList[0]==''):?>
+                                <img class="img-responsive" src="http://ddp.mikolow.eu/img/logo.png"/>
+                            <?php else:?>
+                                <img class="img-responsive" src="<?php echo $this->escapeHtml($singleNews->imgList[0]);?>"/>
+                            <?php endif; ?>
+                        </a>
+                    </div>
+                    <div class="col-md-9">
+                        <div>
+                            <a href="/news/single/<?php echo $this->escapeHtml($singleNews->id)?>">
+                                <h2><?php echo $this->escapeHtml($singleNews->title);?></h2></a>
+                            <p>
+                                <?php
+                                echo $this->shortDescription($singleNews->description,160);
+                                ;?>
+                            </p>
+                            <a style="color:<?php echo $colors[$counter] ?>,1)" href="/news/single/<?php echo $this->escapeHtml($singleNews->id)?>">
+                                WIĘCEJ <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="box">
+            <?php foreach ($subsites as $singleSubsites) : ?>
+                <?php if($singleSubsites->title=="Kontakt") :?>
+            <h2><?php echo $this->escapeHtml($singleSubsites->title); ?></h2>
+                    <div class="content"> <?php echo $this->quickContact($singleSubsites->description);?></div>
+                <?php endif ?>
+            <?php endforeach; ?>
+        </div>
+    </div>
+
+
+
+
 <script type="text/javascript">
 
     $('#carousel').carousel({

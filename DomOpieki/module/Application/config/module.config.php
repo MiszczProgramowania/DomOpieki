@@ -80,6 +80,7 @@ return array(
     'view_helpers' => array(
         'invokables' => array(
             'shortDescription' => 'Application\View\Helper\ShortDescription',
+            'quickContact' => 'Application\View\Helper\QuickContact',
         ),
     ),
 );

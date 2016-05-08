@@ -27,7 +27,7 @@ class News implements InputFilterAwareInterface
     private function getImageList($imgUrl){
         return explode(';',$imgUrl);
     }
-
+   
     public function exchangeArray($data)
     {
         $this->id     = (!empty($data['id'])) ? $data['id'] : null;

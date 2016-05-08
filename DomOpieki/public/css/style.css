@@ -70,7 +70,13 @@ h1
 .navbar-header{
     background:#FFFFFF;
 }
-.navbar-header>div#title{
+.navbar-header div#title
+{
+    display: none;
+}
+@media screen and (min-width: 1200px)
+{
+.navbar-header div#title{
     height: 110px;
     font-weight: 600;
     float:left;
@@ -99,6 +105,8 @@ display: -ms-flexbox;
     align-items: center;
     //flexend
 }
+}
+
 .navbar-brand{
     padding: 5px 5px;
 }
@@ -252,6 +260,7 @@ footer p{
 }
 .page-wrap {
     min-height: 100%;
+    margin-top: 70px;
     /* equal to footer height */
     margin-bottom: -100px;
 }
@@ -261,4 +270,8 @@ footer p{
 }
 .site-footer, .page-wrap:after {
     height: 100px;
+}
+#quick_contact_start,
+#quick_contact_end{
+    visibility: hidden;
 }

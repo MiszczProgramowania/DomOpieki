@@ -2,59 +2,22 @@
     <!-- Indicators -->
     <ol class="carousel-indicators">
         <li data-target="#carousel" data-slide-to="0" class="active"></li>
-        <li data-target="#carousel" data-slide-to="1"></li>
-        <li data-target="#carousel" data-slide-to="2"></li>
     </ol>
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
         <div class="item active">
-            <div class="slider">
-                    <div class="col-md-6">
-                        <img src="/img/logo.png" class="img-responsive first"/>
-                    </div>
-                    <div class="col-md-6">
-                        <div class=" second">
-                            <h2>Witamy na stronie</h2>
-                            <p>
-                                Dziennego Domu Pomocy w Mikołowie
-                            </p>
-                        </div>
-                    </div>
 
+            <img src="/img/logo.png" class="img-responsive first"/>
+            <div class="carousel-caption">
+                <h2>Witamy na stronie</h2>
+                <p>
+                    Dziennego Domu Pomocy w Mikołowie
+                </p>
             </div>
+
+
+
         </div>
-        <div class="item">
-            <div class="slider">
-                <div class="col-md-6">
-                    <div class="first-invert">
-                        <h2>Potrzebujesz pomocy ?</h2>
-                        <p>
-                            Zadzwoń: <b>32 226 00 90</b><br/>
-                            Pon - Pia 7.30 do 15.30
-                        </p>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <i class="fa fa-phone-square second-invert" aria-hidden="true"></i>
-                 </div>
-            </div>
-        </div>
-        <div class="item">
-            <div class="slider">
-                <div class="col-md-6">
-                    <div class="first">
-                        <h2>Pomoc i opiekę</h2>
-                        <p>
-                            zapewniamy w godnych warunkach i przyjaznej atmosferze.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <i class="fa fa-smile-o" aria-hidden="true"> </i>
-                </div>
-            </div>
-        </div>
-       
 
     </div>
 
@@ -69,51 +32,61 @@
 </div>
 
 
-    <div class="col-md-9">
-        <div class="box" id="news">
-            <h2>Aktualności</h2>
-            <?php foreach ($news as $singleNews) : ?>
-                <div class="row">
+<div class="col-md-9">
+    <div class="box">
+        <div id="quick-news">
+            <div class="row">
+                <h2 class="title">Aktualności</h2>
+                <div class="box-content">
+                <?php foreach ($news as $singleNews) : ?>
+
                     <div class="col-md-3">
-                        <a href="/news/single/<?php echo $this->escapeHtml($singleNews->id)?>">
-                            <?php if ($singleNews->imgList[0]==''):?>
+                        <a href="/news/single/<?php echo $this->escapeHtml($singleNews->id) ?>">
+                            <?php if ($singleNews->imgList[0] == ''): ?>
                                 <img class="img-responsive" src="http://ddp.mikolow.eu/img/logo.png"/>
-                            <?php else:?>
-                                <img class="img-responsive" src="<?php echo $this->escapeHtml($singleNews->imgList[0]);?>"/>
+                            <?php else: ?>
+                                <img class="img-responsive"
+                                     src="<?php echo $this->escapeHtml($singleNews->imgList[0]); ?>"/>
                             <?php endif; ?>
                         </a>
                     </div>
                     <div class="col-md-9">
-                        <div>
-                            <a href="/news/single/<?php echo $this->escapeHtml($singleNews->id)?>">
-                                <h2><?php echo $this->escapeHtml($singleNews->title);?></h2></a>
+                        <div class="text">
+                            <a href="/news/single/<?php echo $this->escapeHtml($singleNews->id) ?>">
+                                <h2><?php echo $this->escapeHtml($singleNews->title); ?></h2></a>
                             <p>
                                 <?php
-                                echo $this->shortDescription($singleNews->description,160);
-                                ;?>
+                                echo $this->shortDescription($singleNews->description, 320);; ?>
                             </p>
-                            <a style="color:<?php echo $colors[$counter] ?>,1)" href="/news/single/<?php echo $this->escapeHtml($singleNews->id)?>">
-                                WIĘCEJ <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-                            </a>
                         </div>
                     </div>
                     <div class="clearfix"></div>
+
+
+
+
+            <?php endforeach; ?>
                 </div>
-            <?php endforeach; ?>
+            </div>
         </div>
     </div>
-    <div class="col-md-3">
-        <div class="box">
-            <?php foreach ($subsites as $singleSubsites) : ?>
-                <?php if($singleSubsites->title=="Kontakt") :?>
-            <h2><?php echo $this->escapeHtml($singleSubsites->title); ?></h2>
-                    <div class="content"> <?php echo $this->quickContact($singleSubsites->description);?></div>
+</div>
+<div class="col-md-3">
+    <div class="box">
+        <div id="quick-contact">
+            <?php $index=0;
+            foreach ($subsites as $singleSubsites) : ?>
+                <?php if ($singleSubsites->title == "Kontakt") : ?>
+                    <h2 class="title"><?php echo $this->escapeHtml($singleSubsites->title); ?></h2>
+                    <div class="box-content"> <?php echo $this->quickContact($singleSubsites->description); ?></div>
                 <?php endif ?>
+
+                  <?php if($index==2){break;}?>
             <?php endforeach; ?>
+            <center><a href="http://www.mikolow.bip.gmina.pl/index.php?id=904"><img style="border:0;" src="https://www.bip.gov.pl/img/logo_glowne.jpg"></a></center>
         </div>
     </div>
-
-
+</div>
 
 
 <script type="text/javascript">

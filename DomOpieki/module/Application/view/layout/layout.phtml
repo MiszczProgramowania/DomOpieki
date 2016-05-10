@@ -10,8 +10,7 @@
         ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')
     ?>
     <link href='http://fonts.googleapis.com/css?family=Hind&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Gabriela&subset=latin,latin-ext' rel='stylesheet'
-          type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Marcellus&subset=latin,latin-ext' rel='stylesheet' type='text/css'>      type='text/css'>
     <link rel="stylesheet" type="text/css" href="/js/jquery-ui/jquery-ui.min.css">
     <link rel="stylesheet" href="/js/CodeMirror/lib/codemirror.css">
 
@@ -35,7 +34,7 @@
 
 </head>
 <body>
-<nav class="navbar navbar-inverse navbar-fixed-top " role="navigation">
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -70,4 +69,13 @@
 </body>
 
 <?php echo $this->inlineScript() ?>
+<script type="text/javascript">
+    $(window).scroll(function() {
+        if ($(document).scrollTop() > 50) {
+            $('nav.navbar').addClass('minimal');
+        } else {
+            $('nav.navbar').removeClass('minimal');
+        }
+    });
+</script>
 </html>

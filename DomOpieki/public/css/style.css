@@ -17,6 +17,7 @@ div.container a.brand {
     width: 25px;
     height: 25px;
     transition: all 0.3s linear;
+    -webkit-transition: all 0.3s linear;
     border-radius: 15px;
 }
 .carousel-indicators li.active {
@@ -28,7 +29,7 @@ div.container a.brand {
 
 h1, h2, h3, h4, h5
 {
-    font-family: Gabriela;
+    font-family: Marcellus;
     font-weight: 100;
 }
 h1
@@ -52,6 +53,9 @@ h1
 }
 .navbar
 {
+    height: 130px;
+    -webkit-transition: all 0.3s linear;
+    transition: all 0.3s linear;
     background: white;
     border-top:10px solid #A25324;
     border-bottom:10px solid #F7961E;
@@ -61,14 +65,12 @@ h1
     color:#A25324;
     font-weight: 600;
     text-transform: uppercase;
-    transition: all 0.5s linear;
+    transition: all 0.3s linear;
+    -webkit-transition: all 0.3s linear;
 }
 .navbar-inverse .navbar-nav > li > a:hover{
     color: white;
     background: #F7961E;
-}
-.navbar-header{
-    background:#FFFFFF;
 }
 .navbar-header div#title
 {
@@ -78,6 +80,8 @@ h1
 {
 .navbar-header div#title{
     height: 110px;
+    -webkit-transition: all 0.3s linear;
+    transition: all 0.3s linear;
     font-weight: 600;
     float:left;
     width:300px;
@@ -111,6 +115,8 @@ display: -ms-flexbox;
     padding: 5px 5px;
 }
 .navbar-brand img{
+    -webkit-transition: all 0.3s linear;
+    transition: all 0.3s linear;
     height:100px;
 }
 .navbar-inverse .navbar-brand
@@ -260,7 +266,7 @@ footer p{
 }
 .page-wrap {
     min-height: 100%;
-    margin-top: 70px;
+    margin-top: 42px;
     /* equal to footer height */
     margin-bottom: -100px;
 }
@@ -274,4 +280,64 @@ footer p{
 #quick_contact_start,
 #quick_contact_end{
     visibility: hidden;
+}
+.carousel-inner{
+    height:400px;
+}
+.carousel-indicators{
+    width:inherit;
+    position: absolute;
+    right:5%;
+    left:auto;
+}
+.box{
+    padding:50px;
+}
+#quick-contact h2.title{
+    background: #A25324;
+    color: #F7961E;
+    text-transform: uppercase;
+    padding:25px;
+    font-weight:500;
+}
+#quick-news h2.title{
+    background: #F7961E;
+    color: #A25324;
+    text-transform: uppercase;
+    padding:25px;
+    font-weight: 500;
+}
+#quick-contact .box-content{
+    padding-top: 15px;
+    border-top:15px solid #F7961E;
+}
+#quick-news .box-content{
+    padding-top: 15px;
+    border-top:15px solid #A25324
+}
+#quick-news .text{
+    padding: 0;
+    height:240px;
+    text-align: left;
+    -webkit-align-items:flex-start;
+    align-items: left;
+}
+.minimal{
+    height:68px;
+    border-top: 5px solid #A25324;
+    border-bottom: 5px solid #F7961E;
+}
+.minimal .navbar-brand img {
+    height: 50px;
+}
+.minimal .navbar-header div#title
+{
+    height:60px;
+}
+.minimal .navbar-nav li a {
+    line-height: 30px;
+}
+.carousel-inner > .item > img
+{
+    max-height:400px;
 }

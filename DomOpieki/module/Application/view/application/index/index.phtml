@@ -14,20 +14,15 @@
                     dla ludzi w starszym wieku, pragnących godnie spędzić czas.
                 </p>
             </div>
-
             </div>
-
         </div>
         <div class="item">
             <div class="item-image" style="background-image: url('http://ddp.mikolow.eu/upload/slider6.jpg')">
                 <div class="carousel-caption">
 
                 </div>
-
             </div>
-
         </div>
-
     </div>
 
     <!-- Controls -->
@@ -41,7 +36,7 @@
 </div>
 
 
-<div class="col-md-9">
+<div class="col-md-8">
     <div class="box">
         <div id="quick-news">
             <div class="row">
@@ -52,7 +47,7 @@
                     <div class="col-md-3">
                         <a href="/news/single/<?php echo $this->escapeHtml($singleNews->id) ?>">
                             <?php if ($singleNews->imgList[0] == ''): ?>
-                                <img class="img-responsive" src="http://ddp.mikolow.eu/img/logo.png"/>
+                                <img class="img-responsive visible-lg visible-md" src="http://ddp.mikolow.eu/img/logo.png"/>
                             <?php else: ?>
                                 <img class="img-responsive"
                                      src="<?php echo $this->escapeHtml($singleNews->imgList[0]); ?>"/>
@@ -80,7 +75,7 @@
         </div>
     </div>
 </div>
-<div class="col-md-3">
+<div class="col-md-4">
     <div class="box">
         <div id="quick-contact">
             <?php $index=0;

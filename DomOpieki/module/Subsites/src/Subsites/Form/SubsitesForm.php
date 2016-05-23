@@ -26,14 +26,14 @@ class SubsitesForm extends Form
             'type' => 'Hidden'
         ));
         $this->add(array(
-            'name' => 'title',
+            'name' => 'Tytuł',
             'type' => 'Text',
             'options' => array(
                 'label' => 'Title',
             ),
         ));
         $this->add(array(
-            'name' => 'description',
+            'name' => 'Opis',
             'type' => 'Text',
             'options' => array(
                 'label' => 'Description',
@@ -43,7 +43,7 @@ class SubsitesForm extends Form
             'name' => 'submit',
             'type' => 'Submit',
             'attributes' => array(
-                'value' => 'Go',
+                'value' => 'Wyślij',
                 'id' => 'submitbutton',
             ),
         ));

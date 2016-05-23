@@ -25,21 +25,21 @@ class NewsForm extends Form
             'name' => 'title',
             'type' => 'Text',
             'options' => array(
-                'label' => 'Title',
+                'label' => 'Tytuł',
             ),
         ));
         $this->add(array(
             'name' => 'imgUrl',
             'type' => 'Text',
             'options' => array(
-                'label' => 'ImageUrl',
+                'label' => 'Link do obrazka',
             ),
         ));
         $this->add(array(
             'name' => 'description',
             'type' => 'Text',
             'options' => array(
-                'label' => 'Description',
+                'label' => 'Opis',
             ),
         ));
 
@@ -47,7 +47,7 @@ class NewsForm extends Form
             'name' => 'submit',
             'type' => 'Submit',
             'attributes' => array(
-                'value' => 'Go',
+                'value' => 'Wyślij',
                 'id' => 'submitbutton',
             ),
         ));

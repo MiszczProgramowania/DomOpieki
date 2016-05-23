@@ -1,10 +1,19 @@
 <script type="text/javascript" src="/js/addTinyMce.js"></script>
-
 <?php
 $title = 'Dodaj nowy news';
 $this->headTitle($title);
 ?>
 <h1><?php echo $this->escapeHtml($title); ?></h1>
+    <div class="col-md-2">
+        <ul>
+            <li><a href="/admin/news">Aktualności</a></li>
+            <li><a href="/admin/subsites">Podstrony</a></li>
+            <li><a href="/admin/media">Media</a></li>
+            <li><a href="/login/logout">Wyloguj</a></li>
+        </ul>
+    </div>
+    <div class="col-md-10">
+
 <?php
 $form->setAttribute('action', $this->url('adminNews', array('action' => 'add')));
 $form->prepare();
@@ -18,4 +27,6 @@ echo '<br/>';
 echo $this->formRow($form->get('description'));
 echo '<br/>';
 echo $this->formSubmit($form->get('submit'));
-echo $this->form()->closeTag();
+echo $this->form()->closeTag();?>
+    </div>
+

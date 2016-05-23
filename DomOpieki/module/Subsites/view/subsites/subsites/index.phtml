@@ -4,6 +4,16 @@
 $filter
 ?>
 <h1><?php echo $this->escapeHtml($title); ?></h1>
+<div class="col-md-2">
+
+    <ul>
+        <li><a href="/admin/news">Aktualności</a></li>
+        <li><a href="/admin/subsites">Podstrony</a></li>
+        <li><a href="/admin/media">Media</a></li>
+        <li><a href="/login/logout">Wyloguj</a></li>
+    </ul>
+</div>
+<div class="col-md-10">
 <p>
     <a href="<?php echo $this->url('adminSubsites', array('action'=>'add'));?>">Dodaj nową podstronę</a>
 </p>
@@ -30,3 +40,4 @@ $filter
         </tr>
     <?php endforeach; ?>
 </table>
+    </div>

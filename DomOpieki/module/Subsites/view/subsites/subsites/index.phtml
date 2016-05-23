@@ -30,8 +30,7 @@ $filter
         <tr>
             <td><a href="/info/<?php echo $this->escapeHtml($singleSubsites->url); ?>"><?php echo $this->escapeHtml($singleSubsites->title);?></a></td>
 
-
-                <td><a href="/info/<?php echo $this->escapeHtml($singleSubsites->url);?>">Przeglądaj</a></td>
+            <td><a href="/info/<?php echo $this->escapeHtml($singleSubsites->url);?>">Przeglądaj</a></td>
             <td><a href="<?php echo $this->url('adminSubsites',
                     array('action'=>'edit', 'id' => $singleSubsites->id));?>">Edycja</a></td>
             <td><a href="<?php echo $this->url('adminSubsites',

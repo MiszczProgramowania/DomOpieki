@@ -34,36 +34,36 @@ class NewsController extends AbstractActionController
 
     public function addAction()
     {
-        
-        $form = new NewsForm();
-        $form->get('submit')->setValue('Add');
+        if($this->checkForAdmin()) {
+            $form = new NewsForm();
+            $form->get('submit')->setValue('Add');
 
-        $request = $this->getRequest();
-        if ($request->isPost()) {
-            $news = new News();
-            $form->setInputFilter($news->getInputFilter());
-            $form->setData($request->getPost());
+            $request = $this->getRequest();
+            if ($request->isPost()) {
+                $news = new News();
+                $form->setInputFilter($news->getInputFilter());
+                $form->setData($request->getPost());
 
-            if ($form->isValid()) {
-                $news->exchangeArray($form->getData());
-                $this->getNewsTable()->saveNews($news);
-                // Redirect to list of news
-                return $this->redirect()->toRoute('adminNews');
+                if ($form->isValid()) {
+                    $news->exchangeArray($form->getData());
+                    $this->getNewsTable()->saveNews($news);
+                    // Redirect to list of news
+                    return $this->redirect()->toRoute('adminNews');
+                }
             }
+            return array('form' => $form);
         }
-        return array('form' => $form);
-
     }
 
     public function editAction()
     {
+        $this->checkForAdmin();
         $id = (int) $this->params()->fromRoute('id', 0);
         if (!$id) {
             return $this->redirect()->toRoute('adminNews', array(
                 'action' => 'add'
             ));
         }
-
         // Get the News with the specified id.  An exception is thrown
         // if it cannot be found, in which case go to the index page.
         try {
@@ -100,6 +100,8 @@ class NewsController extends AbstractActionController
 
     public function deleteAction()
     {
+        $this->checkForAdmin();
+
         $id = (int) $this->params()->fromRoute('id', 0);
         if (!$id) {
             return $this->redirect()->toRoute('adminNews');
@@ -125,6 +127,8 @@ class NewsController extends AbstractActionController
     }
     public function getNewsTable()
     {
+        $this->checkForAdmin();
+
         if (!$this->newsTable) {
             $sm = $this->getServiceLocator();
             $this->newsTable = $sm->get('News\Model\NewsTable');

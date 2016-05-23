@@ -34,6 +34,7 @@ class SubsitesController extends AbstractActionController
 
     public function addAction()
     {
+        $this->checkForAdmin();
         $form = new SubsitesForm();
         $form->get('submit')->setValue('Add');
 
@@ -56,6 +57,7 @@ class SubsitesController extends AbstractActionController
 
     public function editAction()
     {
+        $this->checkForAdmin();
         $id = (int) $this->params()->fromRoute('id', 0);
         if (!$id) {
             return $this->redirect()->toRoute('adminSubsites', array(
@@ -99,6 +101,7 @@ class SubsitesController extends AbstractActionController
 
     public function deleteAction()
     {
+        $this->checkForAdmin();
         $id = (int) $this->params()->fromRoute('id', 0);
         if (!$id) {
             return $this->redirect()->toRoute('adminSubsites');

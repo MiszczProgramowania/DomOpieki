@@ -26,6 +26,7 @@ class PublicController extends AbstractActionController
             $sm = $this->getServiceLocator();
             $this->newsTable = $sm->get('News\Model\NewsTable');
         }
+        
         return $this->newsTable;
     }
     public function singleAction()

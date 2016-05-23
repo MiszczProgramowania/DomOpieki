@@ -8,7 +8,7 @@ $counter=0;
 <h1><?php echo $this->escapeHtml($title); ?></h1>
     <?php foreach ($news as $singleNews) : ?>
         <div class="row-news">
-    <div class="col-md-6">
+    <div class="col-md-6 visible-lg visible-md">
         <a class="miniatura" style="background:<?php echo $colors[$counter] ?> ,0.05)" href="/news/single/<?php echo $this->escapeHtml($singleNews->id)?>">
             <?php if ($singleNews->imgList[0]==''):?>
                 <img src="http://ddp.mikolow.eu/img/logo.png"/>

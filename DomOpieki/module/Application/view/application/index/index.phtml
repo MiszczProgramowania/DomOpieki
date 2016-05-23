@@ -1,3 +1,4 @@
+
 <div id="carousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
@@ -44,10 +45,10 @@
                 <div class="box-content">
                 <?php foreach ($news as $singleNews) : ?>
 
-                    <div class="col-md-3">
+                    <div class="col-md-3 visible-lg visible-md">
                         <a href="/news/single/<?php echo $this->escapeHtml($singleNews->id) ?>">
                             <?php if ($singleNews->imgList[0] == ''): ?>
-                                <img class="img-responsive visible-lg visible-md" src="http://ddp.mikolow.eu/img/logo.png"/>
+                                <img class="img-responsive" src="http://ddp.mikolow.eu/img/logo.png"/>
                             <?php else: ?>
                                 <img class="img-responsive"
                                      src="<?php echo $this->escapeHtml($singleNews->imgList[0]); ?>"/>

@@ -32,7 +32,7 @@ class NewsForm extends Form
             'name' => 'imgUrl',
             'type' => 'Text',
             'options' => array(
-                'label' => 'Link do obrazka',
+                'label' => 'Linki do obrazków',
             ),
         ));
         $this->add(array(

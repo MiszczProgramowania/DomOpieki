@@ -425,3 +425,6 @@ a#mikolow{
     background:#A25324;
     border: none;
 }
+textarea[name="imgUrl"]{
+    width:161%;
+}

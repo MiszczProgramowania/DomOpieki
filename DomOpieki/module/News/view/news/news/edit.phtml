@@ -17,7 +17,7 @@ $this->headTitle($title);
         </ul>
     </div>
     <div class="col-md-10">
-
+        <small> (Linki do obrazków należy oddzielac znakiem ';'. Pierwszy link do obrazka jest główną miniaturą.)</small>
 <?php
 $form = $this->form;
 $form->setAttribute('action', $this->url(
@@ -40,4 +40,14 @@ echo '<br/>';
 echo $this->formSubmit($form->get('submit'));
 echo $this->form()->closeTag();?>
         </div>
+<script type="text/javascript">
+    var input    = document.getElementsByName('imgUrl');
+    var textarea = document.createElement('textarea');
+
+    textarea.name    = input[0].name;
+    textarea.cols  = 40;
+    textarea.rows  = 5;
+    textarea.value = input[0].value;
+    input[0].parentNode.replaceChild(textarea, input[0]);
+</script>
 

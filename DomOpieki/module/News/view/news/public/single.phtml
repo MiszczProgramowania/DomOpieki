@@ -13,7 +13,9 @@ $chosenColor=array_rand($colors);
             <?php if ($news->imgList[0]==''):?>
                 <img src="http://ddp.mikolow.eu/img/logo.png"/>
             <?php else:?>
-            <img src="<?php echo $this->escapeHtml($news->imgList[0]);?>"/>
+                <a href="<?php echo $this->escapeHtml($news->imgList[0]);?>">
+                    <img src="<?php echo $this->escapeHtml($news->imgList[0]);?>"/>
+                </a>
             <?php endif;?>
             </div>
         </div>
@@ -27,7 +29,9 @@ $chosenColor=array_rand($colors);
         <?php for ($x = 1; $x < $length; $x++) : ?>
 
                     <div class="col-sm-6">
-                        <img class="thumbnail" src="<?php echo $this->escapeHtml($news->imgList[$x]);?>"/>
+                        <a href="<?php echo $this->escapeHtml($news->imgList[$x]);?>">
+                            <img class="thumbnail" src="<?php echo $this->escapeHtml($news->imgList[$x]);?>"/>
+                        </a>
                     </div>
 
         <?php endfor; ?>

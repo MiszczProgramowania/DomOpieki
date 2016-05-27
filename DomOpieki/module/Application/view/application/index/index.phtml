@@ -43,14 +43,15 @@
             <div class="row">
                 <h2 class="title">Aktualności</h2>
                 <div class="box-content">
-                <?php foreach ($news as $singleNews) : ?>
+                <?php $index=0;
+                foreach ($news as $singleNews) : ?>
 
                     <div class="col-md-3 visible-lg visible-md">
                         <a href="/news/single/<?php echo $this->escapeHtml($singleNews->id) ?>">
                             <?php if ($singleNews->imgList[0] == ''): ?>
-                                <img class="img-responsive" src="http://ddp.mikolow.eu/img/logo.png"/>
+                                <img class="img-responsive thumbnail" src="http://ddp.mikolow.eu/img/logo.png"/>
                             <?php else: ?>
-                                <img class="img-responsive"
+                                <img class="img-responsive thumbnail"
                                      src="<?php echo $this->escapeHtml($singleNews->imgList[0]); ?>"/>
                             <?php endif; ?>
                         </a>
@@ -66,7 +67,10 @@
                         </div>
                     </div>
                     <div class="clearfix"></div>
-
+                    <?php
+                    if($index==1){break;}
+                    $index++;
+                    ?>
 
 
 
@@ -79,14 +83,14 @@
 <div class="col-md-4">
     <div class="box">
         <div id="quick-contact">
-            <?php $index=0;
+            <?php
             foreach ($subsites as $singleSubsites) : ?>
                 <?php if ($singleSubsites->title == "Kontakt") : ?>
                     <h2 class="title"><?php echo $this->escapeHtml($singleSubsites->title); ?></h2>
                     <div class="box-content"> <?php echo $this->quickContact($singleSubsites->description); ?></div>
                 <?php endif ?>
 
-                  <?php if($index==2){break;}?>
+
             <?php endforeach; ?>
             <center><a href="http://bip.mikolow.eu/index.php/documents/document/74"><img style="border:0;" src="https://www.bip.gov.pl/img/logo_glowne.jpg"></a></center>
         </div>

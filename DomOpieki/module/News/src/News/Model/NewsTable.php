@@ -7,8 +7,12 @@
  */
 
 namespace News\Model;
+use Zend\Db\ResultSet\ResultSet;
 use Zend\Db\TableGateway\TableGateway;
 use Zend\Db\Sql\Select;
+use Zend\Paginator\Adapter\DbSelect;
+use Zend\Paginator\Paginator;
+
 class NewsTable
 {
     protected $tableGateway;
@@ -21,9 +25,11 @@ class NewsTable
     public function fetchAll()
     {
 
+
         $resultSet = $this->tableGateway->select(function (Select $select) {
             $select->order('id DESC');
         });
+
         return $resultSet;
     }
 

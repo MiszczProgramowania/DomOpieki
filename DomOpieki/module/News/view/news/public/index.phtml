@@ -6,7 +6,7 @@ $counter=0;
 ?>
 <div id="news">
 <h1><?php echo $this->escapeHtml($title); ?></h1>
-    <?php foreach ($news as $singleNews) : ?>
+    <?php foreach ($this->paginator as $singleNews) : ?>
         <div class="row-news">
     <div class="col-md-6 visible-lg visible-md">
         <a class="miniatura" style="background:<?php echo $colors[$counter] ?> ,0.05)" href="/news/single/<?php echo $this->escapeHtml($singleNews->id)?>">
@@ -26,7 +26,7 @@ $counter=0;
                 echo $this->shortDescription($singleNews->description,160);
                 ;?>
             </p>
-            <a style="color:<?php echo $colors[$counter] ?>,1)" href="/news/single/<?php echo $this->escapeHtml($singleNews->id)?>">
+            <a style="color:<?php echo $colors[$counter] ?>,1);border:1px solid <?php echo $colors[$counter] ?>,1)" href="/news/single/<?php echo $this->escapeHtml($singleNews->id)?>">
                 WIĘCEJ <i class="fa fa-angle-double-right" aria-hidden="true"></i>
             </a>
         </div>
@@ -37,4 +37,22 @@ $counter=0;
         {$counter=0;}
         else {$counter++;} ?>
     <?php endforeach; ?>
+    <center>
+    <?php
+    // add at the end of the file after the table
+    echo $this->paginationControl(
+    // the paginator object
+        $this->paginator,
+        // the scrolling style
+        'sliding',
+        // the partial to use to render the control
+        'partial/paginator.phtml',
+        // the route to link to when a user clicks a control link
+        array(
+            'route' => 'news'
+        )
+    );
+    ?>
+    </center>
 </div>
+

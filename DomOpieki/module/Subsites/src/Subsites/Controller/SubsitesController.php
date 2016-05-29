@@ -116,7 +116,6 @@ class SubsitesController extends AbstractActionController
                 $this->getSubsitesTable()->deleteSubsites($id);
             }
 
-            // Redirect to list of subsitess
             return $this->redirect()->toRoute('adminSubsites');
         }
 
